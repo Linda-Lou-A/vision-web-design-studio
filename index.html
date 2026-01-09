@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-translate="page-title">Vision Web Design Studio - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta name="description" data-translate="index-meta-description" content="Vision Web Design Studio crafts dynamic, secure, and lightning-fast websites in HTML, CSS, and JavaScript. Specializing in responsive, custom design for long-term growth.">
+    <meta name="keywords" data-translate="index-meta-keywords" content="web design, web development, custom websites, responsive design, HTML, CSS, JavaScript, Vision Web Design, web studio, front-end development">
+    <meta name="robots" content="index, follow">
+      
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="canonical" href="https://www.visionwebdesign.studio/">
+    
+    <meta property="og:title" data-translate="index-og-title" content="Vision Web Design Studio | Forging Digital Success">
+    <meta property="og:description" data-translate="index-og-description" content="Vision Web Design Studio crafts dynamic, secure, and lightning-fast custom websites. Let's bring your vision to life.">
+    <meta property="og:url" content="https://www.visionwebdesign.studio"> 
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.visionwebdesign.studio/images/seamless.jpg"> 
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="1068">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Vision Web Design Studio",
+      "image": "https://www.visionwebdesign.studio/images/index-logo.jpg", 
+      "@id": "https://www.visionwebdesign.studio/#organization",
+      "url": "https://www.visionwebdesign.studio",
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61585122449353"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle San Francisco 40",
+        "addressLocality": "Los Gallardos",
+        "addressRegion": "Almeria",
+        "postalCode": "04280",
+        "addressCountry": "ES"
+      },
+      "telephone": "+34 634 318 014", 
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "areaServed": "Worldwide" 
+    }
+    </script>
+    <style>
+        /* GLOBAL STYLES */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0 40px;
+            overflow-x: hidden; /* Prevents horizontal scroll from breakout */
+        }
+
+        header {
+            background-color: #fff;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 0 -40px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #20B2AA;
+            text-decoration: none;
+            padding-left: 204px;   
+            text-align: center;    
+        }
+
+        .logo-text { line-height: 1; }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li { margin-left: 30px; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #20B2AA;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: #1a8a83; }
+
+        /* DESKTOP ACTIVE STATE (Black on white header) */
+        .nav-links a.active { color: #000 !important; }
+
+        .main-content {
+            flex-grow: 1;
+            width: 100%;
+            margin: 20px 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* --- BREAKOUT CAROUSEL CONTAINER (95% Width) --- */
+        .carousel-container {
+            position: relative;
+            width: 95vw; /* Almost full width */
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 50px;
+            border-radius: 8px;
+            background-color: #20B2AA; 
+            color: #000; 
+            padding: 40px 0; 
+            box-sizing: border-box;
+        }
+
+        .mission-hero-wrapper {
+            display: flex; 
+            flex-direction: column; 
+            width: 100%; 
+            gap: 20px; 
+            align-items: center; 
+            padding: 10px; 
+            box-sizing: border-box; 
+        }
+
+        .mission-statement {
+            max-width: 80%; 
+            text-align: center; 
+            padding-bottom: 20px;
+        }
+
+        .mission-statement p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 10px auto;
+        }
+        
+        .mission-statement p strong { color: #fff; }
+
+        .carousel-slides-absolute-wrapper {
+            display: flex; 
+            flex-wrap: nowrap;
+            justify-content: center; 
+            gap: 30px; 
+            padding: 0 20px; 
+        }
+
+        .carousel-slide {
+            flex: 0 1 30%; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        .carousel-slide h2 {
+            font-size: 1.6em; 
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .carousel-slide p {
+            font-size: 1em;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .image-col img {
+            width: 100%; 
+            max-height: 180px; 
+            object-fit: cover; 
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .final-cta-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .final-cta-container p{
+           padding-bottom: 10px;
+           font-size: large;
+        }
+
+        .cta-button {
+            background-color: #fff;
+            color: #20B2AA;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #20B2AA;
+            color: #fff;
+        }
+
+        /* SOCIAL SHARE */
+        .social-share-container {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #f0f0f0; 
+            border-radius: 8px;
+            color: #000;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .share-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .facebook-btn { background-color: #3b5998; }
+        .twitter-btn { background-color: #000; }
+        .linkedin-btn { background-color: #0077b5; }
+        .whatsapp-btn { background-color: #25D366; }
+
+        /* LANGUAGE SWITCHER */
+        .lang-switcher { display: flex; gap: 15px; margin-right: 30px; }
+        .lang-switcher img {
+            width: 30px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 3px;
+        }
+        .lang-switcher img.active-lang { border-color: #20B2AA; }
+
+        /* FOOTER */
+        footer {
+            background-color: #111;
+            color: #ccc;
+            padding: 20px 0;
+            text-align: center;
+            margin: 0 -40px;
+        }
+
+        .footer-links a { color: #20B2AA; text-decoration: none; font-weight: bold; margin: 0 10px; }
+
+        /* HAMBURGER */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #20B2AA;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* TABLET & MOBILE RESPONSIVENESS */
+        @media screen and (max-width: 1300px) {
+            body { padding: 0 20px; }
+            header { margin: 0 -20px; padding: 15px 20px; }
+            footer { margin: 0 -20px; }
+
+            .logo { padding-left: 0; text-align: center; font-size: 24px; }
+
+            .menu-toggle { display: block; }
+            .nav-links { display: none; } /* Hide default desktop links */
+
+            /* MOBILE MENU BOX */
+            .nav-menu-links.is-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background-color: #222;
+                padding: 20px 40px;
+                border-radius: 8px;
+                z-index: 100;
+            }
+
+            .nav-menu-links li { margin: 10px 0; }
+            
+            /* MOBILE ACTIVE STATE (White on dark background) */
+            .nav-menu-links a.active { color: #fff !important; }
+
+            /* STACK CAROUSEL VERTICALLY */
+            .carousel-slides-absolute-wrapper { flex-direction: column; align-items: center; }
+            .carousel-slide { flex: 1 1 100%; width: 90%; margin-bottom: 30px; }
+            .image-col img { max-height: 250px; }
+            
+            .carousel-container { width: 97vw; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .mission-statement { max-width: 95%; }
+            .social-share-container { width: 90%; }
+        }
+
+        /* COOKIE BANNER */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0; left: 0; width: 100%;
+            background-color: #111; color: #fff;
+            padding: 15px 40px;
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        #cookie-accept { background-color: #20B2AA; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-left: 20px;}
+        
+        @media screen and (max-width: 768px) {
+            #cookie-banner { flex-direction: column; text-align: center; padding: 20px; }
+            #cookie-accept { margin-left: 0; margin-top: 10px; width: 100%; }
+        }
+        @media screen and (width: 344px)  {
+.logo {font-size: 22px;
+        }       
+    }
+    </style>
+</head>
+<body>
+   <header>
+        <nav class="navbar">
+            <div class="lang-switcher">
+                <img src="images/english.png" alt="English" id="lang-en" class="active-lang" data-lang="en">
+                <img src="images/spanish.png" alt="Spanish" id="lang-es" data-lang="es">
+            </div>
+            <a href="index.html" class="logo">Vision Web<br> Design Studio</a>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+            
+            <ul class="nav-links nav-menu-links"> 
+                <li><a href="index.html" class="active" data-translate="nav-home">Home</a></li>
+                <li><a href="about.html" data-translate="nav-about">About</a></li>
+                <li><a href="portfolio.html" data-translate="nav-portfolio">Portfolio</a></li>
+                <li><a href="contact.html" data-translate="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1 data-translate="hero-title">Welcome to Vision Web Design Studio</h1>
+        <p data-translate="hero-subtitle">Your vision, our expertise, beautiful websites.</p>
+
+        <div class="carousel-container">
+            <div class="mission-hero-wrapper">
+                <div class="mission-statement">
+                    <h2 data-translate="mission-h2">My Mission:</h2>
+                    <p data-translate="mission-p">To empower your business with <strong>dynamic, secure, and lightning-fast</strong> websites<br> that are intuitively designed, fully responsive, and engineered for long-term growth.</p>
+                </div>
+                
+                <div class="carousel-slides-absolute-wrapper">
+                    <div class="carousel-slide">
+                        <h2 data-translate="slide1-h2">Innovative Designs</h2>
+                        <p data-translate="slide1-p">We craft unique and engaging websites that captivate your audience and drive results.</p>
+                        <div class="image-col">
+                            <img src="images/innovative.jpg" alt="Innovative digital design concepts.">
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <h2 data-translate="slide2-h2">Seamless User Experience</h2>
+                        <p data-translate="slide2-p">Our focus is on creating intuitive and accessible interfaces that users love to navigate.</p>
+                        <div class="image-col">
+                            <img src="images/seamless.jpg" alt="Seemless user experience on devices.">
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <h2 data-translate="slide3-h2">Cutting-Edge Technology</h2>
+                        <p data-translate="slide3-p">Staying ahead of the curve, we utilize the latest web technologies to bring your ideas to life.</p>
+                        <div class="image-col">
+                            <img src="images/cuttingedge.jpg" alt="Latest web technologies.">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="final-cta-container">
+                    <p data-translate="cta-p">Ready to bring your vision to life?</p>
+                    <a href="contact.html" class="cta-button" data-translate="cta-button">Start a Project Today</a>
+                </div>
+            </div> 
+        </div>
+
+        <div class="social-share-container">
+            <h3 data-translate="social-share-h3">Share Our Services:</h3>
+            <div class="share-buttons">
+                <a href="#" onclick="var lang = document.documentElement.lang || 'en'; var msg = window.translations[lang]['whatsapp-msg']; window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg + window.location.href)); return false;" class="share-btn whatsapp-btn" aria-label="Share on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;" class="share-btn facebook-btn" aria-label="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" onclick="var lang = document.documentElement.lang || 'en'; var msg = window.translations[lang]['share-msg']; window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(msg), 'twitter-share-dialog', 'width=626,height=436'); return false;" class="share-btn twitter-btn" aria-label="Share on X">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" onclick="var lang = document.documentElement.lang || 'en'; var title = window.translations[lang]['share-linkedin-title']; window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href) + '&title=' + encodeURIComponent(title), 'linkedin-share-dialog', 'width=626,height=436'); return false;" class="share-btn linkedin-btn" aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy.html" data-translate="nav-privacy">Privacy Policy</a> | 
+                <a href="terms.html" data-translate="nav-terms">Terms of Use</a>
+            </div>
+            <p class="copyright" data-translate="footer-copyright">&copy; 2025 Vision Web Design Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cookie-banner">
+        <p data-translate="cookie-p">This website uses only essential, strictly necessary cookies for performance and security.</p>
+        <div class="cookie-buttons">
+            <button id="cookie-accept" data-translate="cookie-accept">Accept & Close</button>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="translator.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

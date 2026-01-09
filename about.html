@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-translate="about-meta-title">Vision Web Design Studio - About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta name="description" data-translate="about-meta-description" content="Learn about Vision Web Design Studio's passion for bespoke web design, decade of experience, and commitment to innovative digital strategies using AI, Google Analytics, and modern coding practices.">
+    <meta name="keywords" data-translate="about-meta-keywords" content="Linda Louise Angeloni, web design specialist, about web design studio, digital strategy consultation, bespoke web solutions">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://www.visionwebdesign.studio/about.html">
+    
+    <meta property="og:title" data-translate="about-og-title" content="Vision Web Design Studio - About Me | Custom Web Development">
+    <meta property="og:description" data-translate="about-og-description" content="Learn about Vision Web Design Studio's passion for bespoke web design, decade of experience, and commitment to innovative digital strategies using AI, Google Analytics, and modern coding practices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.visionwebdesign.studio/about.html">
+    <meta property="og:image" content="https://www.visionwebdesign.studio/images/outsidebox.jpg">
+    <meta property="og:image:width" content="1576">
+    <meta property="og:image:height" content="1051">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Linda Louise Angeloni",
+  "jobTitle": "Web Design Specialist & Digital Strategist",
+  "url": "https://www.visionwebdesign.studio/about.html",
+  "worksFor": {
+    "@id": "https://www.visionwebdesign.studio/#organization"
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61585122449353"
+  ],
+  "knowsAbout": ["Web Design", "Digital Marketing", "SEO", "Google Analytics", "UX/UI"],
+  "alumniOf": [
+    {
+      "@type": "Organization",
+      "name": "Great Learning Academy - AI in Digital Marketing"
+    },
+    {
+      "@type": "Organization",
+      "name": "Great Learning Academy - Google Analytics"
+    },
+    {
+      "@type": "Organization",
+      "name": "Great Learning Academy - ChatGPT in Digital Marketing"
+    }
+  ]
+}
+</script>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+<style>
+    /* * GLOBAL STYLES */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px;
+    }
+
+    header {
+        background-color: #fff;
+        padding: 15px 40px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin: 0 -40px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #20B2AA;
+        text-decoration: none;
+        padding-left: 0 auto;
+        text-align: center; 
+        padding-left: 202px;
+    }
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      
+        justify-content: space-between;
+    }
+
+    .nav-links li {
+        margin-left: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #20B2AA;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #1a8a83;
+    }
+
+    .nav-links a.active {
+    color: #000 !important;
+}
+    .main-content {
+        flex-grow: 1;
+        width: 100%;
+        margin: 20px 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .main-content h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+/* --- Footer Styling (REVERTED TO ORIGINAL) --- */
+footer {
+    background-color: #111;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    width: 100vw;       /* Forces footer to full window width */
+    margin: 0 -40px;    /* Offsets the body padding to touch the edges */
+}
+
+.footer-content {
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-links a {
+    color: #20B2AA;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    color: #1a8a83;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+    /* Social Share Container */
+    .social-share-container {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        color: #000;
+    }
+
+    .share-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .share-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .facebook-btn { background-color: #3b5998; }
+    .twitter-btn { background-color: #000; }
+    .linkedin-btn { background-color: #0077b5; }
+    .whatsapp-btn { background-color: #25D366; }
+
+    /* --- About Page Specific Styling --- */
+    .about-box {
+        background-color: #20B2AA;
+        color: #000;
+        border-radius: 8px;
+        padding: 40px 20px;
+        margin-bottom: 30px;
+    }
+
+    /* --- About Page Specific Styling (Desktop) --- */
+
+/* This keeps them in a single row */
+.three-column-section {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents columns from jumping to the next line */
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 40px; /* Add this to keep the gap nice and even */
+}
+
+.about-column {
+    flex: 1; /* Allows columns to share the space equally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+/* Ensure the image container doesn't force a wrap */
+.image-container {
+    width: 100%;
+    margin-top: auto; 
+    text-align: center;
+}
+
+.image-container img {
+    height: 280px;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto 0;
+    width: 90%;
+}
+
+    .about-column h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .about-column p {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .about-column ul {
+        text-align: left; /* Keep bullets left-aligned for readability */
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+        /* Language Switcher (Kept next to logo) */
+    .lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-right: 34px;
+    }
+
+    .language-flag {
+        width: 30px;
+        height: 20px;
+        object-fit: cover;
+        border: 1px solid #444;
+        cursor: pointer;
+        border-radius: 3px;
+        opacity: 0.7;
+    }
+     .lang-switcher img {
+            width: 30px; 
+            height: 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            border: 2px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
+            object-fit: cover; 
+        }
+
+        .lang-switcher img:hover {
+            transform: scale(1.05);
+        }
+      .lang-switcher img.active-lang {
+    border: 2px solid #20B2AA !important; /* Explicitly set the color and thickness */
+    box-shadow: 0 0 8px rgba(32, 178, 170, 0.7) !important;
+    opacity: 1 !important; /* Makes the flag bright instead of faded */
+}
+    .location-note {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #000;
+    /* We set this to none to remove the horizontal line */
+    border-top: none; 
+    padding-top: 15px;
+    text-align: center;
+}
+/* --- Desktop Navigation Fix (Ensures full menu is visible > 1301px) --- */
+@media screen and (min-width: 1301px) {
+    .nav-links {
+        display: flex !important;
+    }
+    .menu-toggle {
+        display: none !important;
+    }
+}
+
+/* FIX 2: Tighter Mobile Breakpoint (<= 767px) for forcing logo text wrap */
+@media screen and (max-width: 767px) {
+    .logo {
+        /* Adjusted width to ensure it handles 2 lines better */
+        max-width: 200px; 
+        text-align: center;
+        font-size: 24px; /* Slightly smaller to fit "Vision Web" on line 1 */
+        padding-left: 10px; /* Reduced padding to save horizontal space */
+        text-align: center; 
+    }
+}
+@media screen and (width: 360px) {
+.logo {
+    font-size: 22px;
+}
+}
+
+/* NEW FIX 3: Very narrow screens (e.g., iPhone SE, Galaxy S8) */
+@media screen and (max-width: 359px) {
+    .logo {
+        font-size: 24px; /* Smaller font ensures 2 lines on the narrowest devices */
+        max-width: 160px;
+        text-align: center; 
+    }
+    .navbar {
+        gap: 0 5px; /* Tightens the space between flags, logo, and burger */
+    }
+  @media screen and (width: 540px)  {
+    .logo{
+        padding-right: 112px;
+    }
+ }  
+    
+    /* Optional: adjustments for the cookie banner on very small screens */
+    #cookie-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+   /* --- Mobile Responsiveness --- */
+    @media screen and (max-width: 1300px) {
+        body { 
+            padding: 0 15px; 
+            overflow-x: hidden; /* Prevents side-scrolling */
+        }
+        
+      header { 
+        margin: 0 -15px; 
+        padding: 15px; 
+        width: 100vw; /* Force to full viewport width */
+        box-sizing: border-box;
+        position: relative;
+        left: 0;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 100%; /* Ensure it doesn't overflow the header */
+        margin: 0;
+    }
+        /* Reset the logo padding that was causing the offset */
+        .logo {
+            padding: 0 !important; 
+            margin: 0 auto; /* Helps center if space allows */
+            text-align: center;
+            flex-grow: 1; /* Allows logo to take middle space */
+        }
+
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: #20B2AA;
+            font-size: 28px;
+            z-index: 100;
+            padding: 0;
+            width: 40px;
+        }
+
+        /* Ensure flags have a set width so they don't squash */
+        .lang-switcher {
+            width: 80px; 
+            margin-right: 0;
+            gap: 5px;
+        }
+
+        .nav-links { display: none; }
+
+        .nav-menu-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 15px; 
+        background-color: #222;
+        width: auto;
+        min-width: 150px;
+        padding: 15px 2px; 
+        border-radius: 8px;
+        z-index: 99;
+        text-align: center;
+    }
+
+    .nav-menu-links.is-open { 
+        display: flex; 
+    }
+
+    /* PLACE THE NEW CODE HERE */
+    .nav-menu-links li {
+        margin: 10px 0; 
+        width: 100%;
+    }
+
+    .nav-menu-links a {
+        padding: 1px 0; 
+        display: block;
+        color: #20B2AA;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* This handles your request for the White active color on mobile */
+    .nav-menu-links a.active {
+        color: #ffffff !important;
+    }
+        .three-column-section {
+            flex-direction: column;
+            gap: 40px;
+        }
+        /* Update this inside your @media screen and (max-width: 1300px) */
+footer {
+    background-color: #111;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    
+    /* These three lines force it to ignore body padding and hit the edges */
+    width: 100vw;
+    margin-left: calc(-1 * 15px); /* Matches the 15px body padding */
+    margin-right: calc(-1 * 15px);
+    
+    position: relative;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px; /* Keeps the text inside from touching the very edge */
+    box-sizing: border-box;
+}
+    }
+
+    /* Target 540px and below specifically */
+    @media screen and (max-width: 540px) {
+        .logo {
+            font-size: 22px; /* Slightly smaller for mobile flow */
+            line-height: 1.2;
+            max-width: 160px;
+        }
+        
+        /* Center the "About" box content */
+        .main-content {
+            margin: 10px 0;
+        }
+        
+        .about-box {
+            padding: 20px 10px;
+        }
+    }
+    /* Cookie Banner Styling (Standard) */
+    #cookie-banner {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #111;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        z-index: 1000;
+    }
+   
+</style>
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="lang-switcher">
+            <img src="images/english.png" alt="English flag" id="lang-en" class="language-flag active-lang" data-lang="en">
+            <img src="images/spanish.png" alt="Español flag" id="lang-es" class="language-flag" data-lang="es">
+        </div>
+
+        <a href="index.html" class="logo">Vision Web<br> Design Studio</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+        
+        <ul class="nav-links nav-menu-links"> 
+            <li><a href="index.html" data-translate="nav-home" data-translate-link="nav-home-link">Home</a></li>
+            <li><a href="about.html" class="active" data-translate="nav-about" data-translate-link="nav-about-link">About</a></li>
+            <li><a href="portfolio.html" data-translate="nav-portfolio" data-translate-link="nav-portfolio-link">Portfolio</a></li>
+            <li><a href="contact.html" data-translate="nav-contact" data-translate-link="nav-contact-link">Contact</a></li>
+            </ul>
+    </nav>
+</header>
+    <div class="main-content">
+        <h1 data-translate="about-hero-title">My Vision - My Story</h1>
+
+        <div class="about-box">
+            <div class="about-section-wrapper">
+            
+                <div class="three-column-section">
+                    
+                    <div class="about-column">
+                        <h2 data-translate="about-col1-h2">My Passion & Approach</h2>
+                        <p data-translate="about-col1-p">I have been passionately <strong>designing websites since 2011,</strong> bringing over a decade of experience to every project. My approach is defined by <strong>thinking outside the box and even thinking like there is no box</strong> and an unwavering <strong>attention to detail,</strong> which is my true forte. I work closely with every client to achieve exactly what they envision.</p>
+                        <div class="image-container">
+                            <img src="images/outsidebox.jpg" alt="Thinking outside the box concept image.">
+                        </div>
+                    </div>
+
+                    <div class="about-column">
+                        <h2 data-translate="about-col2-h2">Commitment to Innovation</h2>
+                        <p data-translate="about-col2-p">As part of my commitment to delivering cutting-edge solutions, I have recently completed and achieved a <strong>100% score</strong> in three specialized 'My Great Learning' online courses:</p>
+                        <ul class="translated-list"> 
+    <li data-translate="about-col2-list-li1"><strong>Google Analytics:</strong> Proactively utilizing data to enhance user experience.</li>
+    <li data-translate="about-col2-list-li2"><strong>AI in Digital Marketing:</strong> Integrating the latest artificial intelligence tools to optimize strategy.</li>
+    <li data-translate="about-col2-list-li3"><strong>ChatGPT for Digital Marketing:</strong> Leveraging advanced language models for superior content and client communication.</li> 
+</ul>
+                        <div class="image-container">
+                            <img src="images/chatgpt.jpg" alt="ChatGPT Certificate">
+                        </div>
+                    </div>
+
+                    <div class="about-column">
+                        <h2 data-translate="about-col3-h2">Engineered for Success</h2>
+                        <p data-translate="about-col3-p">These achievements ensure the digital strategies I build for you are <strong>not just visually appealing, but are also intelligently engineered</strong> for success in the modern online landscape. I excel at offering <strong>creative options and effective solutions</strong> to guide your website project from a simple idea to a stunning reality.</p>
+                        <div class="image-container">
+                            <img src="images/analytics.jpg" alt="Google Analytics Certificate">
+                        </div>
+                    </div>
+
+                </div>
+                
+                
+
+                <div class="three-column-section">
+                    
+                    <div class="about-column">
+                        <h2 data-translate="about-col4-h2">Why Choose Vision Web Design Studio?</h2>
+                        <p data-translate="about-col4-p">Unlike restrictive, one-size-fits-all online template builders, Vision Web Design Studio delivers a <strong>fully bespoke digital solution</strong>. Your business deserves a unique, high-performing website engineered specifically for your goals and scalable for future growth. <strong>Stand out from the rest,</strong> I ensure your website is a powerful asset, not just a digital placeholder.</p>
+                        <div class="image-container">
+                            <img src="images/standout.jpg" alt="Stand out from the rest concept image.">
+                        </div>
+                    </div>
+
+                    <div class="about-column">
+                        <h2 data-translate="about-col5-h2">My Areas of Expertise</h2>
+                        <p data-translate="about-col5-p">I design and develop <strong>all types of professional websites</strong>, specializing in custom solutions including, but not limited to:</p>
+                        <ul class="translated-list">
+    <li data-translate="about-col5-list-li1"><strong>Ecommerce Platforms</strong></li>
+    <li data-translate="about-col5-list-li2"><strong>Estate Agent Websites</strong>- with advanced listings</li>
+    <li data-translate="about-col5-list-li3"><strong>Restaurant/Bar Sites</strong> - with online booking</li>
+    <li data-translate="about-col5-list-li4"><strong>Hotels and Hospitality</strong></li>
+    <li data-translate="about-col5-list-li5"><strong>Construction/Trade</strong> portfolios</li>
+    <li data-translate="about-col5-list-li6"><strong>Retail Shop</strong> - informational or full e-commerce</li>
+</ul>
+                        <div class="image-container">
+                            <img src="images/digital-marketing.jpg" alt="AI Digital Marketing Certificate">
+                        </div>
+                    </div>
+                    
+                    <div class="about-column">
+                        <h2 data-translate="about-col6-h2">Website Refresh & Tune-Up</h2>
+                        <p data-translate="about-col6-p">Do you have an existing website that feels <strong>dated, slow, or not mobile-friendly</strong>? I offer comprehensive update and refresh services. I'll strip out old, inefficient code and replace it with <strong>modern, up-to-date coding and design practices</strong> to dramatically improve speed, security, and search engine performance, all while keeping your core branding intact.</p>
+                        <div class="image-container">
+                            <img src="images/upgrade.jpg" alt="Image representing a website upgrade and tuning service.">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="location-note" data-translate="about-location-note">
+            Note: I am based in <strong>Almería, Spain</strong>, but my commitment to high-quality web design is not limited by geography—I am proud to work with clients across the globe. I operate from my dedicated home office, which allows me to maintain a lean structure and focus entirely on client projects.
+        </div>
+<div class="social-share-container">
+    <h3 data-translate="social-share-h3">Share Our Services:</h3>
+    <div class="share-buttons">
+        <div class="share-buttons">
+        <a href="#" 
+           onclick="var lang = document.documentElement.lang || 'en'; var msg = window.translations[lang]['whatsapp-msg']; window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg + window.location.href)); return false;" 
+           class="share-btn whatsapp-btn" 
+           data-translate-attr="aria-label:share-whatsapp"
+           aria-label="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" 
+           onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;" 
+           class="share-btn facebook-btn" 
+           data-translate-attr="aria-label:share-facebook"
+           aria-label="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#" 
+           onclick="var lang = document.documentElement.lang || 'en'; var msg = window.translations[lang]['share-msg']; window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(msg), 'twitter-share-dialog', 'width=626,height=436'); return false;" 
+           class="share-btn twitter-btn" 
+           data-translate-attr="aria-label:share-twitter"
+           aria-label="Share on X">
+            <i class="fab fa-twitter"></i>
+        </a>
+
+        <a href="#" 
+           onclick="var lang = document.documentElement.lang || 'en'; var title = window.translations[lang]['share-linkedin-title']; window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href) + '&title=' + encodeURIComponent(title), 'linkedin-share-dialog', 'width=626,height=436'); return false;" 
+           class="share-btn linkedin-btn" 
+           data-translate-attr="aria-label:share-linkedin"
+           aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+</div>
+            </div> 
+        </div> 
+        
+        
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy.html" data-translate="nav-privacy" data-translate-link="nav-privacy-link">Privacy Policy</a> | 
+                <a href="terms.html" data-translate="nav-terms" data-translate-link="nav-terms-link">Terms of Use</a>
+            </div>
+            <p class="copyright" data-translate="footer-copyright">&copy; 2025 Vision Web Design Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <div id="cookie-banner">
+        <p data-translate="cookie-banner-p">This website uses only essential, strictly necessary cookies for performance and security. We do not use advertising or tracking cookies.</p>
+        <div class="cookie-buttons">
+            <button id="cookie-accept" data-translate="cookie-accept-button">Accept & Close</button>
+            <a href="privacy.html#cookies" id="cookie-manage" data-translate="cookie-manage-link" data-translate-link="nav-privacy-link-cookies">Manage Settings</a> 
+        </div>
+  <script src="translations.js"></script>
+<script src="translator.js"></script>
+<script src="menu.js"></script>
+</body>
+</html>

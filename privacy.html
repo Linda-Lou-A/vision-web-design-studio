@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-translate="policy-title">Vision Web Design Studio - Privacy Policy</title>
+
+    <meta name="description" data-translate="policy-meta-description" content="Vision Web Design Studio's Privacy Policy. We collect minimal data (Name, Email via contact form) and do not use advertising or tracking cookies.">
+    <meta name="keywords" data-translate="policy-meta-keywords" content="privacy policy, no tracking, GDPR compliance, cookie policy, data security, minimal data collection">
+    <meta name="robots" content="index, follow"> 
+    <link rel="canonical" href="https://www.visionwebdesign.studio/privacy.html">
+    <meta property="og:title" data-translate="policy-title" content="Vision Web Design Studio - Privacy Policy">
+    <meta property="og:description" data-translate="policy-meta-description" content="Vision Web Design Studio's Privacy Policy. We collect minimal data (Name, Email via contact form) and do not use advertising or tracking cookies.">
+    <meta property="og:image" content="images/index.png"> <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:type" content="website">
+
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.visionwebdesign.studio/privacy.html#webpage",
+  "name": "Privacy Policy | Vision Web Design Studio",
+  "description": "Policy detailing data collection, security, and cookie usage.",
+  "url": "https://www.visionwebdesign.studio/privacy.html",
+  "inLanguage": ["en", "es"],
+  "publisher": {
+    "@id": "https://www.visionwebdesign.studio/#organization"
+  },
+  "mainEntity": {
+    "@type": "WebPageElement",
+    "name": "Privacy Policy Statement",
+    "description": "Information on how we handle user data and cookies."
+  }
+}
+</script>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <style>
+        /* Define colors for easy reference */
+        :root {
+            --accent-green: #20B2AA;
+            --dark-background: #000;
+            --light-text: #fff;
+            --dark-text: #000;
+            --grey-text: #ccc;
+        }
+
+        /* * GLOBAL STYLES (Using Variables) */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--dark-background);
+            color: var(--light-text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0 40px;
+            box-sizing: border-box; 
+        }
+
+        header {
+            background-color: var(--light-text);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 0 -40px;
+            padding: 15px 40px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-green);
+            text-decoration: none;
+            margin-left: 24px;
+            text-align: center; 
+            padding-left: 210px;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent-green);
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1a8a83;
+        }
+        
+        /* Highlight current page link */
+        .nav-links a[href="privacy.html"] {
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 5px;
+            color: var(--dark-text); /* Highlight text black for better contrast on white background */
+        }
+    /* --- Language Flags Container Styling --- */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 15px; 
+        }
+
+        .lang-switcher img {
+            width: 30px; 
+            height: 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            border: 2px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
+            object-fit: cover; 
+        }
+
+        .lang-switcher img:hover {
+            transform: scale(1.05);
+        }
+
+        .lang-switcher img.active-lang {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 8px rgba(32, 178, 170, 0.7);
+        }
+        .main-content {
+            flex-grow: 1;
+            width: 100%;
+            text-align: left; 
+            margin: 40px auto; 
+            padding: 0;
+            max-width: 1100px;
+        }
+        
+        /* --- Privacy Page Specific Styling --- */
+
+        /* Style for the title container (to center the text) */
+        .page-title {
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+
+        /* Style for the title text */
+        .page-title h1 {
+            color: var(--light-text); 
+            font-size: 2.5em;
+            margin-top: 0;
+            margin-bottom: 0; 
+        }
+        
+        /* Apply Turquoise Background to the content area */
+        .privacy-container {
+            background-color: var(--accent-green); /* Turquoise Background */
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .privacy-container h2 {
+            color: var(--light-text); /* Section titles in WHITE */
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        .privacy-container p, 
+        .privacy-container ul,
+        .privacy-container li {
+            line-height: 1.8;
+            font-size: 1em;
+            color: var(--dark-text); /* Main body text in BLACK */
+            margin-bottom: 20px;
+        }
+        
+        /* Style for the final contact link */
+        .privacy-container p a {
+            color: var(--light-text); /* Contact link in WHITE */
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        /* Style for the text inside strong tags in the content */
+        .privacy-container strong {
+            color: var(--dark-text); 
+            font-weight: 700;
+        }
+
+        /* --- Footer Styling --- */
+        footer {
+            background-color: #111;
+            color: var(--grey-text);
+            padding: 20px 0;
+            text-align: center;
+            width: 100vw;
+            margin: 0 -40px;
+        }
+
+        .footer-content {
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-links a {
+            color: var(--accent-green);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        /* --- Hamburger Menu Styling (CORRECTED LOGIC) --- */
+        .menu-toggle {
+            display: none; 
+            background: none;
+            border: none;
+            color: var(--accent-green);
+            font-size: 28px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 100;
+        }
+
+        /* --- Mobile Breakpoint: SHOW Hamburger and HIDE Full Menu --- */
+        @media screen and (max-width: 1300px) {
+            .navbar {
+                display: flex; 
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            
+.nav-menu-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 15px; 
+    background-color: #222;
+    width: auto;           /* Let the box size itself based on padding */
+    min-width: 80px;      /* Ensures it doesn't get too skinny */
+    
+    /* This creates the '5cm' style padding you wanted around the whole list */
+    padding: 15px 40px;         
+    
+    border-radius: 8px;
+    z-index: 99;
+    text-align: center;    /* This centers the text container */
+}
+
+.nav-menu-links li {
+    margin: 0;
+    width: 100%;           /* Ensures the list item takes up full width for centering */
+}
+
+.nav-menu-links a {
+    padding: 8px 0;          /* Reduced from 15px to 8px to bring items closer */
+    display: block;
+    color: #20B2AA;         /* This sets the text to your Turquoise/Green color */
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.1em;       /* Slightly adjusted for a cleaner look */
+    font-weight: bold;      /* Makes the green pop more against the dark background */
+}
+
+            /* SHOW the hamburger icon on mobile */
+            .menu-toggle {
+                display: block; 
+            }
+            
+            /* Class to display the menu when toggled by JS */
+            .nav-menu-links.is-open {
+                display: flex;
+            }
+        }
+        /* Mobile adjustments for padding/margin */
+        @media screen and (max-width: 768px) {
+            body { padding: 0 15px; }
+            header { margin: 0 -15px; padding: 15px 15px; }
+            footer { margin: 0 -15px; }
+            .privacy-container { padding: 20px; }
+            .page-title { margin-bottom: 15px; }
+        }
+        /* --- COOKIE CONSENT BANNER STYLING --- */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #111; /* Dark footer background */
+            color: var(--light-text);
+            padding: 5px 40px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 0.95em;
+            flex-wrap: wrap; /* Allows wrapping on small screens */
+        }
+
+        #cookie-banner p {
+            margin: 0 15px 0 0;
+            line-height: 1.4;
+            color: var(--grey-text);
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px; /* Space for mobile stacking */
+        }
+
+        #cookie-accept,
+        #cookie-manage {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #cookie-accept {
+            background-color: var(--accent-green); /* Turquoise accent */
+            color: var(--light-text);
+        }
+
+        #cookie-accept:hover {
+            background-color: #1a8a83;
+        }
+
+        #cookie-manage {
+            background-color: #444;
+            color: var(--light-text);
+        }
+
+        #cookie-manage:hover {
+            background-color: #555;
+        }
+
+        /* Mobile adjustments for the banner */
+        @media screen and (max-width: 768px) {
+            #cookie-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 15px;
+            }
+            #cookie-banner p {
+                margin: 0 0 10px 0;
+            }
+            .cookie-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            #cookie-accept,
+            #cookie-manage {
+                flex-grow: 1; 
+            }
+        }
+    </style>
+</head>
+<body data-page-id="privacy">
+    <div id="cookie-banner" style="display: none;">
+        <p data-translate="cookie-p">This website uses only essential, strictly necessary cookies for performance and security. We do not use advertising or tracking cookies.</p>
+        <div class="cookie-buttons">
+            <button id="cookie-accept" data-translate="cookie-accept">Accept & Close</button>
+            <a href="privacy.html#cookies" id="cookie-manage" data-translate-link="cookie-manage-link" data-translate="cookie-manage">Manage Settings</a> 
+        </div>
+    </div>
+    
+    <header>
+    <nav class="navbar">
+        <div class="lang-switcher">
+            <img src="images/english.png" alt="English Flag" id="lang-en" class="active-lang" data-lang="en">
+            <img src="images/spanish.png" alt="Spanish Flag" id="lang-es" data-lang="es">
+        </div>
+            
+        <a href="index.html" class="logo">Vision Web<br> Design Studio</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+        
+        <ul class="nav-links nav-menu-links"> 
+            <li><a href="index.html" data-translate="nav-home">Home</a></li>
+            <li><a href="about.html" data-translate="nav-about">About</a></li>
+            <li><a href="portfolio.html" data-translate="nav-portfolio">Portfolio</a></li>
+            <li><a href="contact.html" data-translate="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="main-content">
+        <div class="page-title">
+            <h1 data-translate="policy-h1">Privacy Policy</h1>
+        </div>
+
+        <div class="privacy-container">
+            <p data-translate="policy-last-updated">Effective Date: November 12, 2025</p>
+
+            <p data-translate="policy-p-1">Vision Web Design Studio operates this website. This page informs you of our policies regarding the collection, use, and disclosure of Personal Information when you use our Service.</p>
+
+            <h2 data-translate="policy-h2-1">1. Information Collection and Use</h2>
+            <p data-translate="policy-p-2">We collect only the minimum amount of information necessary to respond to your inquiries. The only personal information we collect is submitted directly by you via our <strong>Contact Form</strong>.</p>
+            <ul>
+                <li data-translate="policy-li-1"><strong>Personal Data Collected:</strong> Name and Email Address.</li>
+                <li data-translate="policy-li-2"><strong>Purpose:</strong> This data is used solely to respond to your questions, provide project quotes, and initiate communication regarding potential services. We do not use this data for marketing or share it with third parties.</li>
+            </ul>
+
+            <h2 data-translate="policy-h2-2"><a id="cookies"></a>2. No Automatic Data Collection (Cookies & Tracking)</h2>
+            <p data-translate="policy-p-3">This website is purely informational and <strong>does not use cookies, tracking pixels, or any external analytics software</strong> to automatically collect data about your browsing habits, location, or device.</p>
+            <p data-translate="policy-p-4">If we decide to implement tracking in the future (e.g., Google Analytics to improve service quality), we will update this policy and inform users.</p>
+
+            <h2 data-translate="policy-h2-3">3. Security of Data</h2>
+            <p data-translate="policy-p-5">The security of your Personal Information is important to us. We store and transmit all data collected through the contact form using reasonable and standard security measures. However, no method of transmission over the Internet is 100% secure.</p>
+
+            <h2 data-translate="policy-h2-4">4. Data Retention</h2>
+            <p data-translate="policy-p-6">We retain your contact information only for as long as is necessary to fulfill the purposes outlined in this Privacy Policy. Once a business relationship is concluded or communication ends, your data is securely deleted.</p>
+
+            <h2 data-translate="policy-h2-5">5. Links to Other Sites</h2>
+            <p data-translate="policy-p-7">Our Service may contain links to other sites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit, as we have no control over and assume no responsibility for the content or practices of any third-party sites or services.</p>
+
+            <h2 data-translate="policy-h2-6">6. Changes to This Privacy Policy</h2>
+            <p data-translate="policy-p-8">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+            <p data-translate="policy-contact-p">
+    <p><span data-translate="policy-contact-p-prefix">Contact Us: If you have any questions about this Privacy Policy, please contact us via the </span><a href="contact.html" data-translate="policy-contact-link">Contact page</a>.</p>
+</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy.html" data-translate="nav-privacy" class="active">Privacy Policy</a> | 
+                <a href="terms.html" data-translate="nav-terms">Terms of Use</a>
+            </div>
+             <p class="copyright" data-translate="footer-copyright">&copy; 2025 Vision Web Design Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="translations.js"></script>
+    <script src="translator.js"></script>
+    <script src="menu.js"></script> 
+</body>
+</html>
