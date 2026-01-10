@@ -52,450 +52,247 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 <style>
-    /* * GLOBAL STYLES */
+    /* 1. GLOBAL STYLES */
+    :root {
+        --accent-green: #20B2AA;
+        --dark-background: #000;
+        --light-text: #fff;
+        --dark-text: #000;
+        --grey-text: #ccc;
+    }
+
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #000;
-        color: #fff;
+        background-color: var(--dark-background);
+        color: var(--light-text);
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         padding: 0 40px;
+        box-sizing: border-box;
     }
 
     header {
         background-color: #fff;
-        padding: 15px 40px;
+        padding: 15px 0;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         margin: 0 -40px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     .navbar {
         display: flex;
-        justify-content: space-between;
+        justify-content: center; 
         align-items: center;
-        margin: 0 auto;
-        padding: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0 40px; 
+        position: relative;
+        min-height: 50px;
+        box-sizing: border-box;
     }
 
+    /* 2. LOGO - Centered with 20px nudge to the left */
     .logo {
         font-size: 24px;
         font-weight: bold;
-        color: #20B2AA;
+        color: var(--accent-green);
         text-decoration: none;
-        padding-left: 0 auto;
-        text-align: center; 
-        padding-left: 202px;
+        text-align: center;
+        line-height: 1.1;
+        margin-left: -20px; 
+        z-index: 2;
     }
 
+    /* 3. NAVIGATION LINKS (Desktop) */
     .nav-links {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
-      
-        justify-content: space-between;
+        position: absolute;
+        right: 40px;
     }
 
-    .nav-links li {
-        margin-left: 30px;
-    }
+    .nav-links li { margin-left: 30px; }
 
     .nav-links a {
         text-decoration: none;
-        color: #20B2AA;
+        color: var(--accent-green);
         font-weight: bold;
         transition: color 0.3s ease;
     }
 
-    .nav-links a:hover {
-        color: #1a8a83;
+    .nav-links a:hover { color: #1a8a83; }
+    
+    /* Desktop Active State */
+    .nav-links a.active { color: #000 !important; }
+
+    /* 4. LANGUAGE SWITCHER */
+    .lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: absolute;
+        left: 40px;
     }
 
-    .nav-links a.active {
-    color: #000 !important;
-}
+    .lang-switcher img {
+        width: 30px; 
+        height: 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        border: 2px solid transparent;
+        transition: border-color 0.2s, transform 0.2s;
+        object-fit: cover; 
+    }
+
+    .lang-switcher img.active-lang {
+        border: 2px solid var(--accent-green) !important;
+        box-shadow: 0 0 8px rgba(32, 178, 170, 0.7) !important;
+    }
+
+    /* 5. MAIN CONTENT & ABOUT BOX */
     .main-content {
         flex-grow: 1;
         width: 100%;
         margin: 20px 0;
-        padding: 0;
         text-align: center;
     }
 
-    .main-content h1 {
-        text-align: center;
-        font-size: 2.5em;
-        margin-bottom: 40px;
-    }
-/* --- Footer Styling (REVERTED TO ORIGINAL) --- */
-footer {
-    background-color: #111;
-    color: #ccc;
-    padding: 20px 0;
-    text-align: center;
-    width: 100vw;       /* Forces footer to full window width */
-    margin: 0 -40px;    /* Offsets the body padding to touch the edges */
-}
+    .main-content h1 { font-size: 2.5em; margin-bottom: 40px; }
 
-.footer-content {
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.footer-links a {
-    color: #20B2AA;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-.footer-links a:hover {
-    color: #1a8a83;
-}
-
-.copyright {
-    margin-top: 10px;
-    font-size: 0.9em;
-}
-    /* Social Share Container */
-    .social-share-container {
-        text-align: center;
-        margin-top: 40px;
-        padding: 20px;
-        background-color: #f0f0f0;
-        border-radius: 8px;
-        color: #000;
-    }
-
-    .share-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .share-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .facebook-btn { background-color: #3b5998; }
-    .twitter-btn { background-color: #000; }
-    .linkedin-btn { background-color: #0077b5; }
-    .whatsapp-btn { background-color: #25D366; }
-
-    /* --- About Page Specific Styling --- */
     .about-box {
-        background-color: #20B2AA;
+        background-color: var(--accent-green);
         color: #000;
         border-radius: 8px;
         padding: 40px 20px;
         margin-bottom: 30px;
     }
 
-    /* --- About Page Specific Styling (Desktop) --- */
-
-/* This keeps them in a single row */
-.three-column-section {
-    display: flex;
-    flex-wrap: nowrap; /* Prevents columns from jumping to the next line */
-    gap: 30px;
-    justify-content: center;
-    align-items: stretch;
-    width: 100%;
-    margin-bottom: 40px; /* Add this to keep the gap nice and even */
-}
-
-.about-column {
-    flex: 1; /* Allows columns to share the space equally */
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
-}
-
-/* Ensure the image container doesn't force a wrap */
-.image-container {
-    width: 100%;
-    margin-top: auto; 
-    text-align: center;
-}
-
-.image-container img {
-    height: 280px;
-    object-fit: contain;
-    display: block;
-    margin: 10px auto 0;
-    width: 90%;
-}
-
-    .about-column h2 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-        margin-top: 0;
-        width: 100%;
-    }
-
-    .about-column p {
-        font-size: 1em;
-        line-height: 1.5;
-        margin-bottom: 15px;
-    }
-
-    .about-column ul {
-        text-align: left; /* Keep bullets left-aligned for readability */
-        display: inline-block;
-        margin-bottom: 15px;
-    }
-
-        /* Language Switcher (Kept next to logo) */
-    .lang-switcher {
+    .three-column-section {
         display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-right: 34px;
+        gap: 30px;
+        margin-bottom: 40px;
     }
 
-    .language-flag {
-        width: 30px;
-        height: 20px;
-        object-fit: cover;
-        border: 1px solid #444;
-        cursor: pointer;
-        border-radius: 3px;
-        opacity: 0.7;
-    }
-     .lang-switcher img {
-            width: 30px; 
-            height: 20px;
-            border-radius: 3px;
-            cursor: pointer;
-            box-shadow: 0 0 5px rgba(0,0,0,0.3);
-            border: 2px solid transparent;
-            transition: border-color 0.2s, transform 0.2s;
-            object-fit: cover; 
-        }
+    .about-column { flex: 1; display: flex; flex-direction: column; align-items: center; }
 
-        .lang-switcher img:hover {
-            transform: scale(1.05);
-        }
-      .lang-switcher img.active-lang {
-    border: 2px solid #20B2AA !important; /* Explicitly set the color and thickness */
-    box-shadow: 0 0 8px rgba(32, 178, 170, 0.7) !important;
-    opacity: 1 !important; /* Makes the flag bright instead of faded */
-}
-    .location-note {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #000;
-    /* We set this to none to remove the horizontal line */
-    border-top: none; 
-    padding-top: 15px;
-    text-align: center;
-}
-/* --- Desktop Navigation Fix (Ensures full menu is visible > 1301px) --- */
-@media screen and (min-width: 1301px) {
-    .nav-links {
-        display: flex !important;
+    .image-container img {
+        height: 280px;
+        object-fit: contain;
+        width: 90%;
+        margin-top: 10px;
     }
+
+    /* 6. FOOTER */
+    footer {
+        background-color: #111;
+        color: var(--grey-text);
+        padding: 20px 0;
+        text-align: center;
+        width: 100vw;
+        margin: 0 -40px;
+    }
+
+    .footer-links a { color: var(--accent-green); text-decoration: none; margin: 0 15px; font-weight: bold; }
+
+    /* 7. HAMBURGER & COOKIE BANNER */
     .menu-toggle {
-        display: none !important;
-    }
-}
-
-/* FIX 2: Tighter Mobile Breakpoint (<= 767px) for forcing logo text wrap */
-@media screen and (max-width: 767px) {
-    .logo {
-        /* Adjusted width to ensure it handles 2 lines better */
-        max-width: 200px; 
-        text-align: center;
-        font-size: 24px; /* Slightly smaller to fit "Vision Web" on line 1 */
-        padding-left: 10px; /* Reduced padding to save horizontal space */
-        text-align: center; 
-    }
-}
-@media screen and (width: 360px) {
-.logo {
-    font-size: 22px;
-}
-}
-
-/* NEW FIX 3: Very narrow screens (e.g., iPhone SE, Galaxy S8) */
-@media screen and (max-width: 359px) {
-    .logo {
-        font-size: 24px; /* Smaller font ensures 2 lines on the narrowest devices */
-        max-width: 160px;
-        text-align: center; 
-    }
-    .navbar {
-        gap: 0 5px; /* Tightens the space between flags, logo, and burger */
-    }
-  @media screen and (width: 540px)  {
-    .logo{
-        padding-right: 112px;
-    }
- }  
-    
-    /* Optional: adjustments for the cookie banner on very small screens */
-    #cookie-banner {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-   /* --- Mobile Responsiveness --- */
-    @media screen and (max-width: 1300px) {
-        body { 
-            padding: 0 15px; 
-            overflow-x: hidden; /* Prevents side-scrolling */
-        }
-        
-      header { 
-        margin: 0 -15px; 
-        padding: 15px; 
-        width: 100vw; /* Force to full viewport width */
-        box-sizing: border-box;
-        position: relative;
-        left: 0;
+        display: none; 
+        background: none;
+        border: none;
+        color: var(--accent-green);
+        font-size: 28px;
+        cursor: pointer;
     }
 
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        max-width: 100%; /* Ensure it doesn't overflow the header */
-        margin: 0;
-    }
-        /* Reset the logo padding that was causing the offset */
-        .logo {
-            padding: 0 !important; 
-            margin: 0 auto; /* Helps center if space allows */
-            text-align: center;
-            flex-grow: 1; /* Allows logo to take middle space */
-        }
-
-        .menu-toggle {
-            display: block;
-            background: none;
-            border: none;
-            color: #20B2AA;
-            font-size: 28px;
-            z-index: 100;
-            padding: 0;
-            width: 40px;
-        }
-
-        /* Ensure flags have a set width so they don't squash */
-        .lang-switcher {
-            width: 80px; 
-            margin-right: 0;
-            gap: 5px;
-        }
-
-        .nav-links { display: none; }
-
-        .nav-menu-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 15px; 
-        background-color: #222;
-        width: auto;
-        min-width: 150px;
-        padding: 15px 2px; 
-        border-radius: 8px;
-        z-index: 99;
-        text-align: center;
-    }
-
-    .nav-menu-links.is-open { 
-        display: flex; 
-    }
-
-    /* PLACE THE NEW CODE HERE */
-    .nav-menu-links li {
-        margin: 10px 0; 
-        width: 100%;
-    }
-
-    .nav-menu-links a {
-        padding: 1px 0; 
-        display: block;
-        color: #20B2AA;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    /* This handles your request for the White active color on mobile */
-    .nav-menu-links a.active {
-        color: #ffffff !important;
-    }
-        .three-column-section {
-            flex-direction: column;
-            gap: 40px;
-        }
-        /* Update this inside your @media screen and (max-width: 1300px) */
-footer {
-    background-color: #111;
-    color: #ccc;
-    padding: 20px 0;
-    text-align: center;
-    
-    /* These three lines force it to ignore body padding and hit the edges */
-    width: 100vw;
-    margin-left: calc(-1 * 15px); /* Matches the 15px body padding */
-    margin-right: calc(-1 * 15px);
-    
-    position: relative;
-    left: 0;
-    box-sizing: border-box;
-}
-
-.footer-content {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px; /* Keeps the text inside from touching the very edge */
-    box-sizing: border-box;
-}
-    }
-
-    /* Target 540px and below specifically */
-    @media screen and (max-width: 540px) {
-        .logo {
-            font-size: 22px; /* Slightly smaller for mobile flow */
-            line-height: 1.2;
-            max-width: 160px;
-        }
-        
-        /* Center the "About" box content */
-        .main-content {
-            margin: 10px 0;
-        }
-        
-        .about-box {
-            padding: 20px 10px;
-        }
-    }
-    /* Cookie Banner Styling (Standard) */
     #cookie-banner {
         position: fixed;
-        bottom: 0;
-        width: 100%;
+        bottom: 0; left: 0; width: 100%;
         background-color: #111;
         display: flex;
         justify-content: center;
         padding: 10px;
-        z-index: 1000;
+        z-index: 2000;
     }
-   
+
+    /* --- MOBILE BREAKPOINT (Under 1300px) --- */
+    @media screen and (max-width: 1300px) {
+        body { padding: 0 15px; }
+        
+        header { 
+            margin: 0 -15px; 
+            padding: 10px 0;
+            position: sticky; 
+            top: 0;
+            width: 100vw;
+        }
+
+        .navbar { 
+            padding: 0 15px; 
+            justify-content: space-between; 
+        }
+
+        .logo { 
+            margin-left: 0; 
+            position: static; 
+            font-size: 20px;
+            flex-grow: 1;
+        }
+
+        .lang-switcher { position: static; width: auto; }
+        .nav-links { display: none; } /* Hide desktop links */
+        
+        .menu-toggle { 
+            display: block; 
+            position: static; 
+        }
+
+        /* Mobile Dropdown Menu Styling */
+        .nav-menu-links.is-open {
+            display: flex; 
+            flex-direction: column;
+            position: absolute; 
+            top: 60px; 
+            right: 15px;
+            background-color: #222; 
+            padding: 15px 40px;
+            border-radius: 8px; 
+            z-index: 99; 
+            text-align: center;
+        }
+
+        /* Gap between menu items */
+        .nav-menu-links li {
+            margin: 10px 0; 
+            width: 100%;
+        }
+
+        .nav-menu-links a {
+            display: block;
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* ACTIVE LINK TURNS WHITE ON MOBILE */
+        .nav-menu-links a.active {
+            color: #ffffff !important;
+        }
+
+        .three-column-section { flex-direction: column; }
+        
+        footer {
+            width: 100vw;
+            margin: 0 -15px;
+        }
+    }
 </style>
 </head>
 <body>

@@ -70,12 +70,17 @@
             overflow-x: hidden; /* Prevents horizontal scroll from breakout */
         }
 
-        header {
-            background-color: #fff;
-            padding: 15px 40px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin: 0 -40px;
-        }
+      header {
+    background-color: #fff;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 0 -40px;
+    
+    /* --- NEW STICKY RULES --- */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps it above the green carousel and other content */
+}
 
         .navbar {
             display: flex;
@@ -312,7 +317,7 @@
                 z-index: 100;
             }
 
-            .nav-menu-links li { margin: 10px 0; }
+            .nav-menu-links li { margin: 10px 0; font-weight: bold; }
             
             /* MOBILE ACTIVE STATE (White on dark background) */
             .nav-menu-links a.active { color: #fff !important; }

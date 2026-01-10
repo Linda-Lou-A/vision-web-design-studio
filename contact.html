@@ -78,11 +78,16 @@
             padding: 0 40px;
         }
 
-       header {
+  header {
     background-color: #fff;
-    padding: 15px 40px; /* Ensure this is 40px */
+    padding: 15px 40px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 0 -40px;    /* Ensure this is -40px to offset the body padding */
+    margin: 0 -40px;
+    
+    /* --- NEW STICKY RULES --- */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps it above the green carousel and other content */
 }
         .navbar {
             display: flex;

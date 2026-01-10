@@ -37,350 +37,289 @@
 </script>
     
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-    <style>
-        /* Define colors for easy reference */
-        :root {
-            --accent-green: #20B2AA;
-            --dark-background: #000;
-            --light-text: #fff;
-            --dark-text: #000;
-            --grey-text: #ccc;
-        }
+ <style>
+    /* Define colors for easy reference */
+    :root {
+        --accent-green: #20B2AA;
+        --dark-background: #000;
+        --light-text: #fff;
+        --dark-text: #000;
+        --grey-text: #ccc;
+    }
 
-        /* * GLOBAL STYLES (Using Variables) */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--dark-background);
-            color: var(--light-text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 0 40px;
-            box-sizing: border-box; 
-        }
+    /* 1. GLOBAL STYLES */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: var(--dark-background);
+        color: var(--light-text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px;
+        box-sizing: border-box; 
+        overflow-x: hidden;
+    }
 
-        header {
-            background-color: var(--light-text);
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin: 0 -40px;
-            padding: 15px 40px;
-        }
+    header {
+        background-color: #fff;
+        padding: 15px 0; /* Vertical padding only */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin: 0 -40px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0 auto;
-            padding: 0;
-        }
+    .navbar {
+        display: flex;
+        justify-content: center; /* Centers the logo */
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0 40px; /* Pins flags/links to the alignment of your body text */
+        position: relative;
+        min-height: 50px;
+        box-sizing: border-box;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--accent-green);
-            text-decoration: none;
-            margin-left: 24px;
-            text-align: center; 
-            padding-left: 210px;
-        }
+    /* 2. LOGO - Centered with the 20px nudge to the left */
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--accent-green);
+        text-decoration: none;
+        text-align: center;
+        line-height: 1.1;
+        margin-left: -20px; 
+        z-index: 2;
+    }
 
-        .nav-links {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+    /* 3. NAVIGATION LINKS - Absolute Right */
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        position: absolute;
+        right: 40px; /* Aligned to right edge */
+    }
 
-        .nav-links li {
-            margin-left: 30px;
-        }
+    .nav-links li {
+        margin-left: 30px;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--accent-green);
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    .nav-links a {
+        text-decoration: none;
+        color: var(--accent-green);
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
 
-        .nav-links a:hover {
-            color: #1a8a83;
-        }
-        
-        /* Highlight current page link */
-        .nav-links a[href="privacy.html"] {
-            border-bottom: 2px solid var(--accent-green);
-            padding-bottom: 5px;
-            color: var(--dark-text); /* Highlight text black for better contrast on white background */
-        }
-    /* --- Language Flags Container Styling --- */
-        .lang-switcher {
-            display: flex;
-            align-items: center;
-            gap: 15px; 
-        }
+    .nav-links a:hover {
+        color: #1a8a83;
+    }
 
-        .lang-switcher img {
-            width: 30px; 
-            height: 20px;
-            border-radius: 3px;
-            cursor: pointer;
-            box-shadow: 0 0 5px rgba(0,0,0,0.3);
-            border: 2px solid transparent;
-            transition: border-color 0.2s, transform 0.2s;
-            object-fit: cover; 
-        }
+    /* 4. LANGUAGE SWITCHER - Absolute Left */
+    .lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 15px; 
+        position: absolute;
+        left: 40px; /* Aligned to left edge */
+    }
 
-        .lang-switcher img:hover {
-            transform: scale(1.05);
-        }
+    .lang-switcher img {
+        width: 30px; 
+        height: 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        border: 2px solid transparent;
+        transition: border-color 0.2s, transform 0.2s;
+        object-fit: cover; 
+    }
 
-        .lang-switcher img.active-lang {
-            border-color: var(--accent-green);
-            box-shadow: 0 0 8px rgba(32, 178, 170, 0.7);
-        }
-        .main-content {
-            flex-grow: 1;
-            width: 100%;
-            text-align: left; 
-            margin: 40px auto; 
-            padding: 0;
-            max-width: 1100px;
-        }
-        
-        /* --- Privacy Page Specific Styling --- */
+    .lang-switcher img:hover { transform: scale(1.05); }
 
-        /* Style for the title container (to center the text) */
-        .page-title {
-            text-align: center; 
-            margin-bottom: 20px; 
-        }
+    .lang-switcher img.active-lang {
+        border-color: var(--accent-green);
+        box-shadow: 0 0 8px rgba(32, 178, 170, 0.7);
+    }
 
-        /* Style for the title text */
-        .page-title h1 {
-            color: var(--light-text); 
-            font-size: 2.5em;
-            margin-top: 0;
-            margin-bottom: 0; 
-        }
-        
-        /* Apply Turquoise Background to the content area */
-        .privacy-container {
-            background-color: var(--accent-green); /* Turquoise Background */
-            padding: 40px;
-            border-radius: 8px;
-        }
+    /* 5. MAIN CONTENT AREA */
+    .main-content {
+        flex-grow: 1;
+        width: 100%;
+        text-align: left; 
+        margin: 40px auto; 
+        padding: 0;
+        max-width: 1100px;
+    }
+    
+    .page-title { text-align: center; margin-bottom: 20px; }
 
-        .privacy-container h2 {
-            color: var(--light-text); /* Section titles in WHITE */
-            font-size: 1.8em;
-            margin-top: 40px;
-            margin-bottom: 15px;
-        }
+    .page-title h1 {
+        color: var(--light-text); 
+        font-size: 2.5em;
+        margin: 0;
+    }
+    
+    .privacy-container {
+        background-color: var(--accent-green);
+        padding: 40px;
+        border-radius: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-        .privacy-container p, 
-        .privacy-container ul,
-        .privacy-container li {
-            line-height: 1.8;
-            font-size: 1em;
-            color: var(--dark-text); /* Main body text in BLACK */
-            margin-bottom: 20px;
-        }
-        
-        /* Style for the final contact link */
-        .privacy-container p a {
-            color: var(--light-text); /* Contact link in WHITE */
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        /* Style for the text inside strong tags in the content */
-        .privacy-container strong {
-            color: var(--dark-text); 
-            font-weight: 700;
-        }
+    .privacy-container h2 {
+        color: var(--light-text);
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
 
-        /* --- Footer Styling --- */
-        footer {
-            background-color: #111;
-            color: var(--grey-text);
-            padding: 20px 0;
-            text-align: center;
-            width: 100vw;
-            margin: 0 -40px;
-        }
+    .privacy-container p, 
+    .privacy-container ul,
+    .privacy-container li {
+        line-height: 1.8;
+        font-size: 1em;
+        color: var(--dark-text);
+        margin-bottom: 20px;
+    }
+    
+    .privacy-container p a {
+        color: var(--light-text);
+        font-weight: bold;
+        text-decoration: underline;
+    }
 
-        .footer-content {
-            margin: 0 auto;
-            padding: 0 40px;
-        }
+    .privacy-container strong {
+        color: var(--dark-text); 
+        font-weight: 700;
+    }
 
-        .footer-links a {
-            color: var(--accent-green);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    /* 6. FOOTER */
+    footer {
+        background-color: #111;
+        color: var(--grey-text);
+        padding: 20px 0;
+        text-align: center;
+        margin: 0 -40px;
+    }
 
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
+    .footer-content { margin: 0 auto; padding: 0 40px; }
 
-        .copyright {
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
+    .footer-links a {
+        color: var(--accent-green);
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
 
-        /* --- Hamburger Menu Styling (CORRECTED LOGIC) --- */
-        .menu-toggle {
-            display: none; 
-            background: none;
-            border: none;
-            color: var(--accent-green);
-            font-size: 28px;
-            cursor: pointer;
-            padding: 5px;
-            z-index: 100;
-        }
+    .footer-links a:hover { text-decoration: underline; }
 
-        /* --- Mobile Breakpoint: SHOW Hamburger and HIDE Full Menu --- */
-        @media screen and (max-width: 1300px) {
-            .navbar {
-                display: flex; 
-                justify-content: space-between;
-                align-items: center;
-            }
+    .copyright { margin-top: 10px; font-size: 0.9em; }
 
-            
-.nav-menu-links {
-    display: none;
+    /* 7. HAMBURGER MENU - Absolute Right */
+    .menu-toggle {
+        display: none; 
+        background: none;
+        border: none;
+        color: var(--accent-green);
+        font-size: 28px;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 100;
+        min-width: 45px;
+        position: absolute;
+        right: 40px;
+    }
+
+    /* 8. COOKIE BANNER */
+    #cookie-banner {
+        position: fixed;
+        bottom: 0; left: 0; width: 100%;
+        background-color: #111;
+        color: var(--light-text);
+        padding: 10px 40px;
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        font-size: 0.95em;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+
+    #cookie-banner p { margin: 0 15px 0 0; line-height: 1.4; color: var(--grey-text); }
+
+    .cookie-buttons { display: flex; gap: 10px; margin-top: 5px; }
+
+    #cookie-accept, #cookie-manage {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    #cookie-accept { background-color: var(--accent-green); color: var(--light-text); }
+    #cookie-manage { background-color: #444; color: var(--light-text); }
+
+    /* 9. MOBILE RESPONSIVE RULES */
+    @media screen and (max-width: 1300px) {
+        body { padding: 0 15px; }
+        header { margin: 0 -15px; padding: 10px 0; }
+        footer { margin: 0 -15px; }
+
+        .navbar { padding: 0 15px; justify-content: space-between; }
+        .logo { margin-left: 0; font-size: 20px; position: static; }
+        .menu-toggle { display: block; position: static; }
+        .nav-links { display: none; }
+        .lang-switcher { position: static; }
+
+        .nav-menu-links.is-open {
+    display: flex;
     flex-direction: column;
     position: absolute;
-    top: 70px;
-    right: 15px; 
+    top: 60px;
+    right: 15px;
     background-color: #222;
-    width: auto;           /* Let the box size itself based on padding */
-    min-width: 80px;      /* Ensures it doesn't get too skinny */
-    
-    /* This creates the '5cm' style padding you wanted around the whole list */
-    padding: 15px 40px;         
-    
+    /* Vertical padding remains 15px */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* Adjusting the horizontal balance */
+    padding-right: 30px; /* Slightly increased right padding */
     border-radius: 8px;
     z-index: 99;
-    text-align: center;    /* This centers the text container */
-}
-
-.nav-menu-links li {
-    margin: 0;
-    width: 100%;           /* Ensures the list item takes up full width for centering */
-}
-
-.nav-menu-links a {
-    padding: 8px 0;          /* Reduced from 15px to 8px to bring items closer */
-    display: block;
-    color: #20B2AA;         /* This sets the text to your Turquoise/Green color */
-    text-decoration: none;
     text-align: center;
-    font-size: 1.1em;       /* Slightly adjusted for a cleaner look */
-    font-weight: bold;      /* Makes the green pop more against the dark background */
 }
-
-            /* SHOW the hamburger icon on mobile */
-            .menu-toggle {
-                display: block; 
-            }
-            
-            /* Class to display the menu when toggled by JS */
-            .nav-menu-links.is-open {
-                display: flex;
-            }
-        }
-        /* Mobile adjustments for padding/margin */
-        @media screen and (max-width: 768px) {
-            body { padding: 0 15px; }
-            header { margin: 0 -15px; padding: 15px 15px; }
-            footer { margin: 0 -15px; }
-            .privacy-container { padding: 20px; }
-            .page-title { margin-bottom: 15px; }
-        }
-        /* --- COOKIE CONSENT BANNER STYLING --- */
-        #cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #111; /* Dark footer background */
-            color: var(--light-text);
-            padding: 5px 40px;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-            font-size: 0.95em;
-            flex-wrap: wrap; /* Allows wrapping on small screens */
-        }
-
-        #cookie-banner p {
-            margin: 0 15px 0 0;
-            line-height: 1.4;
-            color: var(--grey-text);
-        }
-
-        .cookie-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 5px; /* Space for mobile stacking */
-        }
-
-        #cookie-accept,
-        #cookie-manage {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        .nav-menu-links a {
+            padding: 8px 0;
+            display: block;
+            color: var(--accent-green);
+            text-decoration: none;
+            font-size: 1.1em;
             font-weight: bold;
-            transition: background-color 0.3s;
         }
+    }
 
-        #cookie-accept {
-            background-color: var(--accent-green); /* Turquoise accent */
-            color: var(--light-text);
-        }
+    @media screen and (max-width: 768px) {
+        .privacy-container { padding: 20px; }
+        #cookie-banner { flex-direction: column; text-align: center; padding: 15px; }
+        #cookie-banner p { margin: 0 0 10px 0; }
+        .cookie-buttons { width: 100%; justify-content: center; }
+    }
 
-        #cookie-accept:hover {
-            background-color: #1a8a83;
-        }
-
-        #cookie-manage {
-            background-color: #444;
-            color: var(--light-text);
-        }
-
-        #cookie-manage:hover {
-            background-color: #555;
-        }
-
-        /* Mobile adjustments for the banner */
-        @media screen and (max-width: 768px) {
-            #cookie-banner {
-                flex-direction: column;
-                text-align: center;
-                padding: 15px 15px;
-            }
-            #cookie-banner p {
-                margin: 0 0 10px 0;
-            }
-            .cookie-buttons {
-                width: 100%;
-                justify-content: center;
-            }
-            #cookie-accept,
-            #cookie-manage {
-                flex-grow: 1; 
-            }
-        }
-    </style>
+    @media screen and (max-width: 480px) {
+        .logo { font-size: 18px; }
+        .lang-switcher { min-width: 60px; gap: 5px; }
+        .lang-switcher img { width: 25px; height: 16px; }
+    }
+</style>
 </head>
 <body data-page-id="privacy">
     <div id="cookie-banner" style="display: none;">
