@@ -272,7 +272,8 @@
     /* 9. MOBILE RESPONSIVE RULES */
     @media screen and (max-width: 1300px) {
         body { padding: 0 15px; }
-        header { margin: 0 -15px; padding: 10px 0; }
+        header { margin: 0 -15px; padding: 10px 0; position: sticky; /* ADD THIS LINE */
+            top: 0;          /* ADD THIS LINE */}
         footer { margin: 0 -15px; }
 
         .navbar { padding: 0 15px; justify-content: space-between; }
