@@ -292,7 +292,86 @@
             width: 100vw;
             margin: 0 -15px;
         }
+    }   /* --- Floating Social Bar (Desktop) --- */
+.social-share-container {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    z-index: 2000;
+}
+
+.social-share-container h3 { display: none; }
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* THE MISSING PIECE: Styling the actual circles */
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Adds a little depth */
+}
+
+/* THE HOVER RULE: Makes them grow slightly */
+.share-btn:hover {
+    transform: scale(1.15);
+}
+
+/* Colors */
+.facebook-btn { background-color: #3b5998; }
+.twitter-btn { background-color: #000; }
+.linkedin-btn { background-color: #0077b5; }
+.whatsapp-btn { background-color: #25D366; }
+
+/* --- Mobile View (Across the Bottom) --- */
+@media screen and (max-width: 1300px) {
+    .social-share-container {
+        /* Reset any previous settings */
+        left: 0;
+        width: 100%;
+        bottom: 20px; /* Sits 20px above the bottom of the screen */
+        top: auto;
+        transform: none;
+        
+        position: fixed;
+        display: flex;
+        justify-content: center; /* Horizontally centers the contents */
+        align-items: center;
+        
+        background-color: transparent; 
+        z-index: 3000;
+        pointer-events: none;
+        
+        
     }
+
+    .share-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        pointer-events: auto;
+        
+        /* Safety centering */
+        margin: 0 auto;
+    }
+    
+    body {
+        padding-bottom: 100px; /* Space for the buttons */
+    }
+}
 </style>
 </head>
 <body>

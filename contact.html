@@ -169,78 +169,87 @@
             padding: 0;
             max-width: 1500px;
         }
- /* Social Share Container */
- /* This mimics the bottom of the contact box */
-.contact-social-wrapper {
-    background-color: #20B2AA; /* Same turquoise */
-    padding: 0 20px 20px 20px;  /* Space around the white box */
-    margin-top: -10px;         /* Pulls it up to touch the box above */
-    border-radius: 0 0 8px 8px; /* Rounds only the bottom corners */
-}
-
-/* This keeps the social bar looking like the other pages */
-.contact-social-wrapper .social-share-container {
-    max-width: 1500px;          /* Or whatever width you used on Index */
-    margin: 0 auto;            /* Centers it */
-    background-color: #f0f0f0; /* Back to its original light-grey */
-    border-radius: 8px;        /* Fully rounded "island" look */
-}
+     /* --- Floating Social Bar (Desktop) --- */
 .social-share-container {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #f0f0f0; /* Light background to make buttons stand out */
-    border-radius: 8px;
-    color: #000;
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    z-index: 2000;
 }
 
-.social-share-container h3 {
-    margin-bottom: 20px;
-    color: #000;
-}
+.social-share-container h3 { display: none; }
 
 .share-buttons {
     display: flex;
-    justify-content: center;
-    gap: 15px; /* Space between buttons */
+    flex-direction: column;
+    gap: 12px;
 }
 
+/* THE MISSING PIECE: Styling the actual circles */
 .share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px; /* Button size */
-    height: 45px;
-    border-radius: 50%; /* Makes them circular */
-    font-size: 20px;
     color: #fff;
     text-decoration: none;
-    transition: background-color 0.3s;
+    font-size: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Adds a little depth */
 }
 
-/* Specific Button Colors */
-.facebook-btn {
-    background-color: #3b5998; /* Facebook Blue */
-}
-.facebook-btn:hover {
-    background-color: #2d4373;
+/* THE HOVER RULE: Makes them grow slightly */
+.share-btn:hover {
+    transform: scale(1.15);
 }
 
-.twitter-btn {
-    background-color: #000; /* X/Twitter Black */
-}
-.twitter-btn:hover {
-    background-color: #333;
-}
+/* Colors */
+.facebook-btn { background-color: #3b5998; }
+.twitter-btn { background-color: #000; }
+.linkedin-btn { background-color: #0077b5; }
+.whatsapp-btn { background-color: #25D366; }
 
-.linkedin-btn {
-    background-color: #0077b5; /* LinkedIn Blue */
+/* --- Mobile View (Across the Bottom) --- */
+@media screen and (max-width: 1300px) {
+    .social-share-container {
+        /* Reset any previous settings */
+        left: 0;
+        width: 100%;
+        bottom: 20px; /* Sits 20px above the bottom of the screen */
+        top: auto;
+        transform: none;
+        
+        position: fixed;
+        display: flex;
+        justify-content: center; /* Horizontally centers the contents */
+        align-items: center;
+        
+        background-color: transparent; 
+        z-index: 3000;
+        pointer-events: none;
+        
+        /* Forces it to ignore the body's 20px padding */
+        margin-left: 12px !important; 
+    }
+
+    .share-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        pointer-events: auto;
+        
+        /* Safety centering */
+        margin: 0 auto;
+    }
+    
+    body {
+        padding-bottom: 100px; /* Space for the buttons */
+    }
 }
-.linkedin-btn:hover {
-    background-color: #005983;
-}   
-.whatsapp-btn { background-color: #25D366; }       
-        /* --- Contact Page Specific Styling --- */
 
         .contact-container {
             display: flex;
