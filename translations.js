@@ -229,6 +229,12 @@ window.translations = {
         "cookie-accept": "Accept & Close",
         "cookie-manage": "Manage Settings",
         "cookie-manage-link": "privacy.html#cookies", // Link target
+        // Add to your 'en' section:
+"project3-title": "The Culinary Canvas (Restaurant Concept)",
+"project-demo-link": "Explore Live Demo →",
+"project3-role": "Role: Full-Stack Concept, Automated Systems & UX Design.",
+"project3-p1": "This comprehensive restaurant platform demonstrates high-level functionality including an automated table booking system and a dynamic events calendar.",
+"project3-p2": "Key features include a digital menu layout for easy updates and a backend-ready reservation flow.",
     },
 
 
@@ -460,5 +466,11 @@ window.translations = {
         "cookie-accept": "Aceptar y Cerrar",
         "cookie-manage": "Administrar Ajustes",
         "cookie-manage-link": "privacy.html#cookies", // Link target
+        // Add to your 'es' section:
+"project3-title": "The Culinary Canvas (Concepto de Restaurante)",
+"project-demo-link": "Explorar Demo en Vivo →",
+"project3-role": "Rol: Concepto Full-Stack, Sistemas Automatizados y Diseño UX.",
+"project3-p1": "Esta plataforma integral para restaurantes demuestra una funcionalidad de alto nivel que incluye un sistema de reserva de mesas automatizado y un calendario de eventos dinámico.",
+"project3-p2": "Las características clave incluyen un diseño de menú digital para actualizaciones fáciles y un flujo de reservas listo para el backend.",
 },
 };
