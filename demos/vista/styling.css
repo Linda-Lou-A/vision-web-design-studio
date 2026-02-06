@@ -1,0 +1,1753 @@
+/* --- 1. GENERAL & NAVIGATION --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust this number to match your navbar height */
+   
+}
+body {
+    margin: 0;
+    padding-top: 80px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;              /* We force a height */
+    background-color: #ffffff; /* Solid black so images don't bleed through */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;             /* Removed top/bottom padding to use height instead */
+    z-index: 10000;            /* Extremely high to stay on top */
+    box-sizing: border-box;    /* Keeps the width perfect */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c5a059;
+}
+
+/* --- 2. HERO SECTIONS --- */
+/* Index Hero */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* Booking Page Hero */
+.booking-hero {
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero-content h2, .booking-hero h1 {
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+@media (max-width: 1281px) {
+    /* 1. Header Layout - Stacking the Actions */
+   .navbar {
+        position: fixed;   /* Keep it pinned at the top */
+        height: 100px;      /* Reduced from 100px to make it slimmer */
+        padding: 0 5%;     /* Vertical padding is handled by the height now */
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px; /* Tight gap between Burger and EN-ES */
+    }
+
+    /* 2. Hamburger Styling */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        margin: 0;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #222;
+        transition: 0.3s;
+    }
+/* 3. Language Switch - ALWAYS VISIBLE now */
+    .lang-switch {
+        display: flex !important; 
+        flex-direction: row; 
+        position: static; 
+        width: auto;
+        background: none;
+        padding: 0;
+        box-shadow: none;
+        font-size: 0.85rem; /* Slightly larger for readability */
+        border-top: none;
+        margin-top: 0;
+        gap: 8px; /* Space around the separator */
+        align-items: center;
+    }
+
+    /* Show the | separator specifically for this view */
+    .lang-sep {
+        display: inline !important; 
+        color: #000000;
+        font-weight: 300;
+    }
+
+    /* Remove the dash we added earlier */
+    .lang-switch a:first-child::after {
+        content: "" !important;
+    }
+    /* 3. Language Switch - ALWAYS VISIBLE now */
+       
+       /* 4. Navigation Menu (The Drawer) */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 1000;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* 5. Highlight & Typography */
+    .nav-links a.active, 
+    .lang-switch a.active {
+        color: #c5a059 !important;
+        font-weight: 600;
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+/* Force the hero to behave like a simple box */
+    .hero {
+        display: block !important;
+        text-align: center !important;
+        padding: 0 !important;
+        height: 80vh !important;
+        position: relative;
+    }
+
+    /* Force the content to sit in the middle and use 100% of the width */
+    .hero-content {
+        display: block !important;
+        width: 100% !important;
+        padding-top: 25vh !important; /* Adjust this to move text up/down */
+        margin: 0 !important;
+        left: 0 !important;
+    }
+
+    /* Target the button specifically */
+    .hero-content .btn-book {
+        display: block !important;   /* Turning it into a block forces it to a new line */
+        width: 200px !important;     /* Set a fixed width so we can center it */
+        margin: 20px auto !important; /* The 'auto' now has a fixed width to work with */
+        float: none !important;
+        padding: 15px 0 !important;  /* Balanced padding */
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+        word-wrap: break-word;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .btn-book {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .link-standard {
+        margin: 20px auto 0;
+        display: inline-block;
+    }
+}
+/* --- 3. INDEX PAGE CONTENT --- */
+/* About Section */
+.about-intro {
+    padding: 30px 10%;
+    background-color: #fff;
+}
+
+.about-grid {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-image, .about-text {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.about-text span {
+    color: #c5a059;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.about-text p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+@media (max-width: 768px) {
+.menu-container {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* Centralizes the headers */
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.menu-item {
+    border: 1px solid #eee; /* Adds the border to ALL items */
+    padding: 30px;
+    background: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centers the content horizontally */
+    text-align: center;     /* Centers the text lines */
+}
+
+.menu-item:hover {
+    border-color: #c5a059; /* Highlights gold on hover */
+    transform: translateY(-5px);
+}
+
+.item-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: block;
+    margin-top: 15px;
+    color: #c5a059;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center; /* Centers the text inside the span */
+    width: 100%;        /* Ensures it takes up the full width to allow centering */
+}
+}
+/* Food Preview Grid */
+.food-preview {
+    padding: 30px 5%;
+    background-color: #f9f9f9;
+}
+
+.section-title span {
+    color: #c5a059;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-title h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.preview-item {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    display: block;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.overlay h3 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.preview-item:hover img { transform: scale(1.1); }
+.preview-item:hover .overlay { background: rgba(197, 160, 89, 0.6); }
+@media (max-width: 1281px) {
+.preview-item h3{
+text-align: center;
+}
+/* --- IPAD & TABLET TEXT OPTIMIZATION --- */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Increase base body text */
+    body {
+        font-size: 1.15rem; /* Slightly larger than standard */
+    }
+
+    /* Make section descriptions easier to read */
+    .about-text p, 
+    .hero-content p, 
+    .legal-content p {
+        font-size: 1.25rem !important;
+        line-height: 1.7;
+    }
+
+    /* Adjust headings to match the larger text */
+    .about-text h2 {
+        font-size: 3rem !important;
+    }
+
+    .hero-content h2 {
+        font-size: 3.5rem !important;
+    }
+
+    /* Ensure the menu items and prices are legible */
+    .item-info h3 {
+        font-size: 1.6rem !important;
+    }
+
+    .price {
+        font-size: 1.3rem !important;
+    }
+}
+} 
+/* --- 4. BOOKING PAGE (DARK FORM) --- */
+.booking-layout {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.booking-sidebar { flex: 1; padding-top: 40px; }
+.left { text-align: center; }
+.right { text-align: center; }
+
+.booking-sidebar h3 {
+    color: #c5a059;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+   }
+
+.time-block { margin-bottom: 30px; }
+.time-block h4 { font-size: 1rem; margin-bottom: 5px; color: #333; }
+
+.booking-form-wrapper { flex: 2; }
+
+.dark-form {
+    background-color: #111; /* Midnight Black */
+    padding: 50px;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.dark-form h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #c5a059;
+}
+
+.dark-form label {
+    color: #eee;
+    font-size: 0.8rem;
+   
+    margin-top: 8px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.dark-form input, .dark-form textarea, .dark-form select {
+    width: 100%;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 12px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+.dark-form select {
+    width: 100%;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 12px;
+    margin-top: 5px;
+    appearance: none; /* Removes default browser styling for a cleaner look */
+}
+
+/* This ensures the options (the text inside the dropdown) are readable */
+.dark-form select option {
+    background: #111;
+    color: white;
+}
+/* Styling the Date and Select inputs for better visibility */
+.dark-form input[type="date"], 
+.dark-form select {
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    color: #c5a059; /* Makes the text gold */
+    font-weight: 600;
+}
+
+/* Add a gold glow when the user clicks into the field */
+.dark-form input[type="date"]:focus, 
+.dark-form select:focus {
+    outline: none;
+    border-color: #c5a059;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+}
+
+/* Styling the calendar icon (for Chrome/Edge/Safari) */
+.dark-form input::-webkit-calendar-picker-indicator {
+    filter: invert(72%) sepia(21%) saturate(945%) hue-rotate(352deg) brightness(88%) contrast(85%);
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Adding a hover effect to make it obvious it's clickable */
+.dark-form input[type="date"]:hover, 
+.dark-form select:hover {
+    background: #2a2a2a;
+    border-color: #c5a059;
+}
+/* --- 5. BUTTONS & LINKS --- */
+.btn-book, .btn-gold, .btn-submit {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #c5a059;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-gold { width: 100%; } /* Specific to Booking Form */
+
+.btn-book:hover, .btn-gold:hover {
+    background-color: #a68545;
+}
+@media (max-width: 768px) {
+    /* 1. Reduce the gap between Hero and the start of the content */
+    .booking-layout {
+        padding-top: 20px !important;
+    }
+
+    /* 2. Tighten space around the sidebar titles (Location & Hours) */
+    .booking-sidebar {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .booking-sidebar h3 {
+        margin-bottom: 10px !important;
+        margin-top: 5px !important;
+    }
+
+    /* 3. Reduce space around the Opening Hours time blocks */
+    .time-block {
+        margin-bottom: 15px !important;
+        padding: 5px 0 !important;
+    }
+
+    /* 4. Ensure the flex container doesn't add extra internal spacing */
+    .container-flex {
+        gap: 20px !important; /* Space between the stacked sidebar, form, and hours */
+    }
+
+    /* 5. Tighten the sidebar 'Our Location' specific spacing */
+    .booking-sidebar.left {
+        padding-bottom: 0 !important;
+    }
+}
+@media (max-width: 768px) {
+    /* Remove the excess padding at the bottom of the hours sidebar */
+    .booking-sidebar.right {
+        padding-bottom: 0 !important;
+    }
+
+    /* Tighten the space specifically after the last time-block (Dinner) */
+    .booking-sidebar.right .time-block:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    /* Reduce the padding on the entire layout container at the bottom */
+    .booking-layout {
+        padding-bottom: 30px !important;
+    }
+}
+.link-standard {
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #333;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.link-standard::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #c5a059;
+    transition: width 0.3s ease;
+}
+
+/* --- 6. FOOTER & LEGAL --- */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 30px 10% 20px;
+    margin-top: 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3, .footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    color: #c5a059;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.legal-links {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.legal-links a {
+    color: #777;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover { color: #c5a059; }
+
+.legal-links a:not(:last-child)::after {
+    content: "|";
+    margin-left: 20px;
+    color: #444;
+}
+@media (max-width: 1281px) {
+/* Enhanced Footer Hover for all devices */
+.main-footer .legal-links a:hover {
+    color: #c5a059 !important;
+    text-decoration: underline; /* Optional: adds a visual cue for touch users */
+}
+
+/* Ensure the separator | doesn't turn gold too */
+.legal-links a:not(:last-child)::after {
+    color: #444 !important; 
+}
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* --- 7. COOKIE BANNER --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    border-left: 5px solid #c5a059;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.btn-cookie {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* --- 8. RESPONSIVE --- */
+@media (max-width: 900px) {
+    .container-flex { flex-direction: column; align-items: center; text-align: center; }
+    .about-grid { flex-direction: column; }
+    .preview-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .left, .right { text-align: center; }
+}
+/* --- MENU PAGE STYLING --- */
+
+.menu-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu-header span {
+    color: #c5a059;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.menu-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 30px;
+    /* This creates the classic dotted line between dish and price */
+    border-bottom: 1px dotted #ccc; 
+    padding-bottom: 10px;
+}
+
+.item-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.item-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.item-info p {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+    margin: 0;
+}
+
+.price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #c5a059;
+    font-size: 1.1rem;
+    white-space: nowrap; /* Keeps price on one line */
+}
+
+/* Responsive adjustment for small phones */
+@media (max-width: 480px) {
+    .menu-item {
+        flex-direction: column;
+        border-bottom: 1px solid #eee;
+    }
+    .price {
+        margin-top: 5px;
+        display: block;
+    }
+}
+/* Full-width image dividers for the menu */
+.menu-divider-img {
+    height: 300px;
+    width: 100%;
+    background-attachment: fixed; /* This creates the parallax scroll effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 40px 0;
+}
+
+/* Image for Starters (Tapas/Appetizers) */
+.starters-bg {
+    background-image: url('https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=1200&q=80');
+}
+
+/* Image for Mains (Grilled Fish/Meat) */
+.mains-bg {
+    background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80');
+}
+
+/* Image for Desserts */
+.desserts-bg {
+    background-image: url('https://media.istockphoto.com/id/1346128287/photo/chocolate-fondant-cake-molten-lava-cake.webp?a=1&b=1&s=612x612&w=0&k=20&c=FFvrgxvI0RfEG8-OEb0P8mQRK5log2TEOqSsztBzxZY=');
+}
+@media (max-width: 1400px) {
+    .menu-container{
+        padding-top: 66px;
+    }
+}
+/* Tablet/Mobile fix: Parallax (fixed attachment) often breaks on phones, 
+   so we turn it off for smaller screens */
+@media (max-width: 768px) {
+    .menu-divider-img {
+        background-attachment: scroll;
+        height: 200px;
+    }
+}
+.status-message {
+    display: none; /* Hidden by default */
+    background: #111;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #c5a059;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.status-message h3 {
+    color: #c5a059;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.status-message.success {
+    display: block;
+}
+/* Gallery Hero */
+.gallery-hero {
+    padding: 100px 5%;
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+
+.gallery-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #c5a059;
+}
+
+/* The Grid System */
+.gallery-section {
+    padding: 30px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense; /* Fills in gaps automatically */
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Masonry Layout Rules */
+.wide { grid-column: span 2; }
+.tall { grid-row: span 2; }
+
+/* Mobile View: Everything becomes a single column */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+    .wide, .tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+.gallery-item::after {
+    content: '🔍 View';
+    position: absolute;
+    inset: 0;
+    background: rgba(197, 160, 89, 0.4);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+/* --- UPDATED CONTACT SECTION --- */
+
+.contact-container {
+    /* Increased top padding from 80px to 100px to clear the back button on desktop */
+    padding: 60px 10% 80px 10%; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: flex;
+    gap: 60px;
+}
+
+.contact-info, .contact-form-box {
+    flex: 1;
+}
+
+.contact-info span {
+    color: #c5a059;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.contact-form-box span {
+    color: #c5a059;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.contact-info h2, .contact-form-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.extra-box h2 {
+    padding-top: 0px;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.map-placeholder {
+    margin-top: 30px;
+    width: 100%;
+    height: 350px; 
+    border: 1px solid #eee;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contact-form-box input, .contact-form-box textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* --- CONTACT RESPONSIVE FIXES --- */
+
+/* Tablet & iPad Fix (768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1281px) {
+    .contact-container {
+        /* Pushes the title down further to clear the larger tablet back button */
+        padding-top: 130px; 
+    }
+}
+
+/* Mobile Fix (Below 768px) */
+@media (max-width: 768px) {
+    .contact-container {
+        /* Extra room for the smaller mobile back button */
+        padding-top: 130px; 
+    }
+    .contact-grid { 
+        flex-direction: column; 
+    }
+}
+/* Dish Strip Styling */
+.dish-strip {
+    display: flex;
+    width: 100%;
+    overflow: hidden; /* Keeps it clean */
+    gap: 15px;
+    }
+
+.dish-item {
+    flex: 1; /* Each image takes equal space */
+    height: 300px; /* Square feel on desktop */
+    }
+
+.dish-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Optional hover effect to make it interactive */
+.dish-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive Version */
+@media (max-width: 768px) {
+    .dish-strip {
+        flex-direction: column; /* Stacks images vertically */
+        gap: 15px;
+    }
+    
+ .dish-item {
+        /* This forces EVERY item to be exactly the same height */
+        height: 250px !important; 
+        width: 100%;
+        overflow: hidden;
+        flex: none; /* Prevents flexbox from expanding the 4th item */
+    }
+
+    .dish-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This is the secret—it crops the image to fit the box */
+        display: block;
+    }
+}
+.dishes-section {
+    padding-top: 30px; /* Space above the "Our Dishes" title */
+    background-color: #fff; /* Or #f9f9f9 if you want a slight contrast */
+}
+
+/* Ensure the title has space before the images start */
+.dishes-section .menu-header {
+    margin-bottom: 40px;
+}
+.split-cta {
+    display: flex;
+    height: 600px; /* Large square feel */
+    width: 100%;
+    margin-top: 30px;
+}
+
+.cta-card {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s ease;
+}
+
+/* Background Images */
+.contact-card {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                      url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80');
+}
+
+.booking-card {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                      url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1000&q=80');
+}
+
+/* Hover Effect: Brighten the image and lift the card slightly */
+.cta-card:hover {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                      url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80');
+}
+
+.booking-card:hover {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                      url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1000&q=80');
+}
+
+.cta-content span {
+    color: #c5a059;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.cta-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+
+.btn-outline {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 1px solid #c5a059;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #c5a059;
+    color: #111;
+}
+
+/* Mobile: Stack them vertically */
+@media (max-width: 768px) {
+    .split-cta {
+        flex-direction: column;
+        height: auto;
+        margin-top: 30px;
+    }
+    .cta-card {
+        height: 400px;
+    }
+    .cta-content{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+   .map-placeholder {
+    Margin-bottom: 0px;
+   }
+    
+}
+.legal-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+.legal-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.legal-content h3 {
+    margin-top: 30px;
+    color: #c5a059;
+    font-family: 'Poppins', sans-serif;
+}
+
+.legal-content p, .legal-content ul {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.legal-content ul {
+    padding-left: 20px;
+}
+@media (max-width: 1281px) {
+    .legal-container {
+        padding-top: 20px;
+    }
+}
+/* Container for all events */
+
+.events-list {
+    max-width: 1000px;
+    margin: 60px auto;      /* Centered on the page */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: center;    /* Center the children */
+    gap: 40px;              /* Space between cards */
+}
+
+/* Individual Event Card */
+.event-card {
+    display: flex;
+    flex-direction: row;    /* Content inside card goes left to right */
+    width: 100%;            /* Force full width of the container */
+    max-width: 900px;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+    gap: 30px;              /* Gap between Date, Image, and Info */
+    align-items: center;    /* Vertically centers items inside the card */
+    box-sizing: border-box; /* Crucial for alignment */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Date Box */
+.event-date {
+    background: #c5a059;
+    color: white;
+    min-width: 150px;        /* Fixed width so cards don't jump */
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Image container */
+.event-image {
+    width: 250px;           /* Fixed width for consistency */
+    height: 160px;
+    overflow: hidden;
+    flex-shrink: 0;         /* Prevents the image from squishing */
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Info section takes up remaining space */
+.event-info {
+    flex-grow: 1;
+}
+.events-hero {
+    height: 60vh; /* Takes up 60% of the screen height */
+    min-height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('https://media.istockphoto.com/id/1137781483/photo/black-male-guitarist-singing-and-playing-acoustic-guitar-on-stage.webp?a=1&b=1&s=612x612&w=0&k=20&c=9X4Rz-AVaJcAw_Xh2bmkFTpd4Mf9sfQ2rn2idYuNrP8=');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.events-hero span {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    color: #c5a059; /* That gold highlight color */
+    margin-bottom: 10px;
+}
+
+.events-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive text size */
+    margin: 0;
+}
+@media (max-width: 1281px) {
+    /* Center the main text and headings */
+    .contact-form-box, 
+    .contact-info {
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Center the form inputs and button */
+    #contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact-form input, 
+    #contact-form textarea {
+        width: 100%;
+        max-width: 100%; /* Ensures they fill the container */
+        text-align: left; /* Keep text input left-aligned for better UX */
+    }
+
+    /* Center the icons/labels in info items */
+    .info-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    /* Center the map placeholder */
+    .map-placeholder {
+        margin: 20px auto 0;
+        width: 100%;
+    }
+
+    /* Align the 'Find Us' span */
+    .contact-info span {
+        display: block;
+        margin: 0 auto 10px;
+    }
+    /* 1. Reduce the main container top padding */
+    .contact-container {
+        padding-top: 130px !important; /* Shrunk from desktop size */
+    }
+
+    /* 2. Remove any top margin from the first box and heading */
+    .contact-form-box {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .extra-box h2 {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        line-height: 1.2;
+    }
+
+    /* 3. Tighten the space around the support image */
+    .contact-visual {
+        margin-top: 15px !important; /* Small gap after the first title */
+        margin-bottom: 20px !important;
+    }
+}
+/* Mobile Fix: Stack elements inside the card on small screens */
+@media (max-width: 768px) {
+    .event-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .event-image {
+        width: 100%;
+    }
+}
+.btn-gold-small {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #c5a059; /* Your signature gold */
+    color: #ffffff !important;   /* White text */
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #c5a059;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.btn-gold-small:hover {
+    background-color: transparent;
+    color: #c5a059 !important; /* Text turns gold */
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+.cookie-banner p a {
+    color: #c5a059; /* Your signature gold */
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    margin-left: 5px;
+}
+
+.cookie-banner p a:hover {
+    border-bottom: 1px solid #c5a059; /* Elegant underline on hover */
+    opacity: 0.8;
+}
+.lang-switch {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+.lang-switch a {
+    text-decoration: none;
+    color: #222; /* Darker for the main text */
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding: 0 5px;
+}
+
+/* Style for the active language or hover */
+.lang-switch a:hover, 
+.lang-switch a.active {
+    color: #c5a059; /* Gold when hovered or active */
+    font-weight: 600;
+}
+.contact-visual {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px; /* Matches your form inputs */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+.contact-support-img {
+    width: 100%;
+    max-width: 600px; /* Prevents it from getting too huge on desktop */
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.contact-support-img:hover {
+    transform: scale(1.02); /* Subtle zoom for interaction */
+}
+/* --- STICKY CIRCULAR SOCIAL SHARE --- */
+
+/* 1. Container Positioning */
+.share-container {
+    position: fixed;
+    left: 20px;       /* Distance from left edge */
+    top: 50%;         /* Vertical center */
+    transform: translateY(-50%);
+    z-index: 9999;    /* Keeps it above everything */
+    text-align: center;
+}
+
+/* Hide the "Share Vista" text on desktop for a cleaner floating look */
+.share-container p {
+    display: none;
+}
+
+/* 2. Button Layout */
+.share-buttons {
+    display: flex;
+    flex-direction: column; /* Stack vertically on desktop */
+    gap: 15px;
+}
+
+/* 3. The Circular Buttons */
+.share-btn {
+    text-decoration: none;
+    color: white !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Perfect Circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.share-btn i {
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Brand Colors */
+.wa { background-color: #25D366; }
+.fb { background-color: #1877F2; }
+.x  { background-color: #000000; }
+
+/* Hover Effects */
+.share-btn:hover {
+    transform: scale(1.1) translateX(5px);
+    filter: brightness(1.1);
+}
+
+/* 4. MOBILE & TABLET STICKY FIX (Widths up to 1024px) */
+@media screen and (max-width: 1024px) {
+    body {
+        padding-bottom: 70px; /* Space so bar doesn't cover footer content */
+    }
+
+    .share-container {
+        left: 0;
+        bottom: 0;
+        top: auto;
+        transform: none;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95); /* Solid-ish bar at bottom */
+        padding: 10px 0;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
+    }
+
+    .share-buttons {
+        flex-direction: row; /* Row layout for mobile thumbs */
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .share-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .share-btn:hover {
+        transform: translateY(-5px); /* Lift up instead of right on mobile */
+    }
+}
+/* --- BACK TO PORTFOLIO BUTTON --- */
+/* --- BACK TO PORTFOLIO BUTTON --- */
+.portfolio-back-btn {
+    top: 100px !important; /* 70px (nav) + 15px (gap) = 85px */
+        z-index: 11000;       /* Higher than the navbar's 10000 */
+    position: fixed;
+    left: 10px;
+    z-index: 9998;  /* Just below the navbar but above content */
+    background-color: #111; 
+    color: #c5a059 !important; 
+    padding: 8px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 1px;
+    border: 1px solid #c5a059;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.portfolio-back-btn:hover {
+    background-color: #c5a059;
+    color: #fff !important;
+    transform: translateX(5px);
+}
+
+/* --- MOBILE ADJUSTMENTS --- */
+@media screen and (max-width: 1024px) {
+    .portfolio-back-btn {
+        top: 100px;      /* Slightly higher on mobile as navbars are often shorter */
+        left: 10px;
+        padding: 6px 10px;
+        font-size: 0.65rem;
+    }
+}
+/* --- MOBILE & TABLET ADJUSTMENTS --- */
+
+/* For smaller phones (clears the mobile navbar) */
+@media screen and (max-width: 767px) {
+    .portfolio-back-btn {
+        top: 100px;      /* Increased from 85px to clear the header */
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 0.7rem;
+        width: 70%;
+    }
+}
+
+/* For iPads and Tablets (768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1281px) {
+    .portfolio-back-btn {
+        top: 80px;      /* Increased to ensure it clears tablet navbars */
+        left: 20px;
+        padding: 12px 20px; 
+        font-size: 1rem;    
+        border-width: 2px;  
+    }
+}
+/* --- DEMO DISCLAIMER --- */
+.demo-disclaimer {
+    position: fixed;
+    top: 100px; /* Matches your desktop back button */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background-color: rgba(17, 17, 17, 0.9); /* Slight transparency */
+    color: #c5a059;
+    padding: 8px 20px;
+    border: 1px solid #c5a059;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap; /* Keeps it on one line */
+    pointer-events: none; /* Allows clicks to pass through if necessary */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* --- RESPONSIVE ALIGNMENT --- */
+
+/* Matching your Tablet/iPad adjustments */
+@media screen and (min-width: 768px) and (max-width: 1281px) {
+    .demo-disclaimer {
+        top: 160px; /* Matches your tablet back button top */
+        font-size: 0.7rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Matching your Mobile adjustments */
+@media screen and (max-width: 767px) {
+    .demo-disclaimer {
+        top: 160px; /* Matches your mobile back button top */
+        font-size: 0.55rem; /* Smaller text to fit screens */
+        padding: 10px 10px;
+        width: 80%; /* Prevents it hitting the back button */
+        white-space: normal; /* Allows wrapping if the name is too long */
+        text-align: center;
+    }
+}
+/* Hide both when the mobile menu is active */
+.nav-active .demo-disclaimer,
+.nav-active .portfolio-back-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+/* ============================================================
+   FINAL PRINT STYLES - SINGLE PAGE OPTIMIZED
+   ============================================================ */
+@media print {
+    @page {
+        margin: 0.8cm 1.2cm;
+    }
+
+    /* Hide Web Elements */
+    nav, footer, .portfolio-back-btn, .demo-disclaimer, .print-button-wrapper, 
+    .hamburger, .lang-switch, .menu-divider-img, .cookie-banner, 
+    .share-container, .btn-gold, .menu-header span {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 10pt;
+        line-height: 1.2;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'Georgia', serif;
+    }
+
+    /* Restaurant Branding Header */
+    body::before {
+        content: "VISTA RESTAURANTE - ALMERÍA";
+        display: block;
+        text-align: center;
+        font-size: 20pt;
+        font-weight: bold;
+        margin-bottom: 20px !important;
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+    }
+
+    /* Consistent Section Spacing for Starters, Mains, and Desserts */
+    .menu-container {
+        display: block !important;
+        margin-top: 25px !important; /* Uniform gap for all sections */
+        padding: 0 !important;
+    }
+
+    .menu-header {
+        margin-bottom: 10px !important;
+        margin-top: 50px !important;
+    }
+
+    /* Clean Headers - No lines beneath them */
+    .menu-header h2 {
+        font-size: 1.4rem !important;
+        margin: 0 !important;
+        text-transform: uppercase;
+        color: #000 !important;
+        letter-spacing: 1px;
+        border: none !important; /* Removes the line */
+    }
+
+    /* Menu Item Layout */
+    .menu-grid {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .menu-item {
+        display: block !important;
+        margin-bottom: 8px !important;
+        padding: 0 !important;
+        width: 100% !important;
+        page-break-inside: avoid;
+        border: none !important; /* Ensures no lines between items */
+    }
+
+    .item-info h3 {
+        display: inline !important;
+        font-size: 10.5pt !important;
+        font-weight: bold;
+        margin: 0 !important;
+    }
+
+    .item-info p {
+        display: inline !important;
+        font-size: 9.5pt !important;
+        font-style: italic;
+        margin: 0 10px !important;
+        color: #333 !important;
+    }
+
+    .price {
+        display: inline !important;
+        font-weight: bold;
+        font-size: 10.5pt !important;
+    }
+}

@@ -4,22 +4,29 @@
    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title data-translate="about-meta-title">Vision Web Design Studio - About Me</title>
+   <title data-translate-attr="title-tag:about-meta-title">Vision Web Design Studio - About Me</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <meta name="description" data-translate="about-meta-description" content="Learn about Vision Web Design Studio's passion for bespoke web design, decade of experience, and commitment to innovative digital strategies using AI, Google Analytics, and modern coding practices.">
-    <meta name="keywords" data-translate="about-meta-keywords" content="Linda Louise Angeloni, web design specialist, about web design studio, digital strategy consultation, bespoke web solutions">
+    
+    <meta name="description" content="Learn about Vision Web Design Studio's passion for bespoke web design, decade of experience, and commitment to innovative digital strategies using AI, Google Analytics, and modern coding practices." data-translate-attr="content:about-meta-description">
+    <meta name="keywords" content="Linda Louise Angeloni, web design specialist, about web design studio, digital strategy consultation, bespoke web solutions" data-translate-attr="content:about-meta-keywords">
     <meta name="robots" content="index, follow">
-
+<link rel="apple-touch-icon" href="images/favicon.png">
     <link rel="canonical" href="https://www.visionwebdesign.studio/about.html">
     
-    <meta property="og:title" data-translate="about-og-title" content="Vision Web Design Studio - About Me | Custom Web Development">
-    <meta property="og:description" data-translate="about-og-description" content="Learn about Vision Web Design Studio's passion for bespoke web design, decade of experience, and commitment to innovative digital strategies using AI, Google Analytics, and modern coding practices.">
+    <meta property="og:title" content="Vision Web Design Studio - About Me | Custom Web Development" data-translate-attr="content:about-og-title">
+    <meta property="og:description" content="Learn about Vision Web Design Studio's passion for bespoke web design, decade of experience, and commitment to innovative digital strategies using AI, Google Analytics, and modern coding practices." data-translate-attr="content:about-og-description">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.visionwebdesign.studio/about.html">
     <meta property="og:image" content="https://www.visionwebdesign.studio/images/outsidebox.jpg">
     <meta property="og:image:width" content="1576">
     <meta property="og:image:height" content="1051">
-<script type="application/ld+json">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vision Web Design Studio - About Me | Custom Web Development" data-translate-attr="content:about-og-title">
+    <meta name="twitter:description" content="Learn about Vision Web Design Studio's passion for bespoke web design, decade of experience, and commitment to innovative digital strategies using AI, Google Analytics, and modern coding practices." data-translate-attr="content:about-og-description">
+    <meta name="twitter:image" content="https://www.visionwebdesign.studio/images/outsidebox.jpg">
+<script type="application/ld+json" id="schema-site" data-translate-schema="about-meta-title:about-og-title">
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -49,7 +56,6 @@
   ]
 }
 </script>
-
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 <style>
     /* 1. GLOBAL STYLES */
@@ -71,6 +77,8 @@
         flex-direction: column;
         padding: 0 40px;
         box-sizing: border-box;
+        overflow-x: hidden;
+    position: relative;
     }
 
     header {
@@ -180,7 +188,19 @@
         margin-bottom: 40px;
     }
 
-    .about-column { flex: 1; display: flex; flex-direction: column; align-items: center; }
+    .about-column { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; /* This pushes the image to the bottom */
+}
+.image-container {
+    margin-top: auto; /* This acts like a spring, pushing the image down */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
     .image-container img {
         height: 280px;
@@ -221,8 +241,9 @@
         z-index: 2000;
     }
 
+ 
     /* --- MOBILE BREAKPOINT (Under 1300px) --- */
-    @media screen and (max-width: 1300px) {
+    @media screen and (max-width: 911px) {
         body { padding: 0 15px; }
         
         header { 
@@ -291,6 +312,7 @@
         footer {
             width: 100vw;
             margin: 0 -15px;
+            margin-bottom: 20px;
         }
     }   /* --- Floating Social Bar (Desktop) --- */
 .social-share-container {
@@ -368,10 +390,71 @@
         margin: 0 auto;
     }
     
-    body {
-        padding-bottom: 100px; /* Space for the buttons */
-    }
+    
 }
+ @media screen and (min-device-width: 819px) and (max-device-width: 1025px) {
+        body { padding: 0 15px; }
+        
+        header { 
+            margin: 0 -15px; 
+            padding: 10px 0;
+            position: sticky; 
+            top: 0;
+            width: 100vw;
+        }
+
+        .navbar { 
+            padding: 0 15px; 
+            justify-content: space-between; 
+        }
+
+        .logo { 
+            margin-left: 0; 
+            position: static; 
+            font-size: 20px;
+            flex-grow: 1;
+        }
+
+        .lang-switcher { position: static; width: auto; }
+        .nav-links { display: none; } /* Hide desktop links */
+        
+        .menu-toggle { 
+            display: block; 
+            position: static; 
+        }
+
+        /* Mobile Dropdown Menu Styling */
+        .nav-menu-links.is-open {
+            display: flex; 
+            flex-direction: column;
+            position: absolute; 
+            top: 60px; 
+            right: 15px;
+            background-color: #222; 
+            padding: 15px 40px;
+            border-radius: 8px; 
+            z-index: 99; 
+            text-align: center;
+        }
+
+        /* Gap between menu items */
+        .nav-menu-links li {
+            margin: 10px 0; 
+            width: 100%;
+        }
+
+        .nav-menu-links a {
+            display: block;
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* ACTIVE LINK TURNS WHITE ON MOBILE */
+        .nav-menu-links a.active {
+            color: #ffffff !important;
+        }}
 </style>
 </head>
 <body>
@@ -389,6 +472,7 @@
             <li><a href="index.html" data-translate="nav-home" data-translate-link="nav-home-link">Home</a></li>
             <li><a href="about.html" class="active" data-translate="nav-about" data-translate-link="nav-about-link">About</a></li>
             <li><a href="portfolio.html" data-translate="nav-portfolio" data-translate-link="nav-portfolio-link">Portfolio</a></li>
+             <li><a href="demonstrations.html" data-translate="nav-demonstrations">Live Demos</a></li>
             <li><a href="contact.html" data-translate="nav-contact" data-translate-link="nav-contact-link">Contact</a></li>
             </ul>
     </nav>
@@ -411,13 +495,8 @@
 
                     <div class="about-column">
                         <h2 data-translate="about-col2-h2">Commitment to Innovation</h2>
-                        <p data-translate="about-col2-p">As part of my commitment to delivering cutting-edge solutions, I have recently completed and achieved a <strong>100% score</strong> in three specialized 'My Great Learning' online courses:</p>
-                        <ul class="translated-list"> 
-    <li data-translate="about-col2-list-li1"><strong>Google Analytics:</strong> Proactively utilizing data to enhance user experience.</li>
-    <li data-translate="about-col2-list-li2"><strong>AI in Digital Marketing:</strong> Integrating the latest artificial intelligence tools to optimize strategy.</li>
-    <li data-translate="about-col2-list-li3"><strong>ChatGPT for Digital Marketing:</strong> Leveraging advanced language models for superior content and client communication.</li> 
-</ul>
-                        <div class="image-container">
+                        <p data-translate="about-col2-p">As part of my commitment to delivering cutting-edge solutions, I have recently completed and achieved a <strong>100% score</strong> in three specialized 'My Great Learning' online courses in <strong>Google Analytics,</strong><strong> AI in Digital Marketing </strong>and <strong>ChatGPT for Digital Marketing.</strong></p>
+                         <div class="image-container">
                             <img src="images/chatgpt.jpg" alt="ChatGPT Certificate">
                         </div>
                     </div>
@@ -437,7 +516,7 @@
                 <div class="three-column-section">
                     
                     <div class="about-column">
-                        <h2 data-translate="about-col4-h2">Why Choose Vision Web Design Studio?</h2>
+                        <h2 data-translate="about-col4-h2">Why Choose Vision?</h2>
                         <p data-translate="about-col4-p">Unlike restrictive, one-size-fits-all online template builders, Vision Web Design Studio delivers a <strong>fully bespoke digital solution</strong>. Your business deserves a unique, high-performing website engineered specifically for your goals and scalable for future growth. <strong>Stand out from the rest,</strong> I ensure your website is a powerful asset, not just a digital placeholder.</p>
                         <div class="image-container">
                             <img src="images/standout.jpg" alt="Stand out from the rest concept image.">
@@ -445,23 +524,15 @@
                     </div>
 
                     <div class="about-column">
-                        <h2 data-translate="about-col5-h2">My Areas of Expertise</h2>
-                        <p data-translate="about-col5-p">I design and develop <strong>all types of professional websites</strong>, specializing in custom solutions including, but not limited to:</p>
-                        <ul class="translated-list">
-    <li data-translate="about-col5-list-li1"><strong>Ecommerce Platforms</strong></li>
-    <li data-translate="about-col5-list-li2"><strong>Estate Agent Websites</strong>- with advanced listings</li>
-    <li data-translate="about-col5-list-li3"><strong>Restaurant/Bar Sites</strong> - with online booking</li>
-    <li data-translate="about-col5-list-li4"><strong>Hotels and Hospitality</strong></li>
-    <li data-translate="about-col5-list-li5"><strong>Construction/Trade</strong> portfolios</li>
-    <li data-translate="about-col5-list-li6"><strong>Retail Shop</strong> - informational or full e-commerce</li>
-</ul>
-                        <div class="image-container">
+                        <h2 data-translate="about-col5-h2">Areas of Expertise</h2>
+                        <p data-translate="about-col5-p">I design and develop <strong>all types of professional websites</strong>, specializing in custom solutions including, but not limited to <strong>Ecommerce Platforms, </strong><strong>Estate Agent Websites</strong> - with advanced listings, <strong>Restaurant/Bar Sites</strong> - with online booking, <strong>Hotels and Hospitality, </strong><strong>Construction/Trade</strong> portfolios and <strong>Retail Shop</strong> - informational or full e-commerce.</p>
+                         <div class="image-container">
                             <img src="images/digital-marketing.jpg" alt="AI Digital Marketing Certificate">
                         </div>
                     </div>
                     
                     <div class="about-column">
-                        <h2 data-translate="about-col6-h2">Website Refresh & Tune-Up</h2>
+                        <h2 data-translate="about-col6-h2">Website Refresh</h2>
                         <p data-translate="about-col6-p">Do you have an existing website that feels <strong>dated, slow, or not mobile-friendly</strong>? I offer comprehensive update and refresh services. I'll strip out old, inefficient code and replace it with <strong>modern, up-to-date coding and design practices</strong> to dramatically improve speed, security, and search engine performance, all while keeping your core branding intact.</p>
                         <div class="image-container">
                             <img src="images/upgrade.jpg" alt="Image representing a website upgrade and tuning service.">

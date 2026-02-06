@@ -4,58 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title data-translate="page-title">Vision Web Design Studio - Home</title>
+    <title data-translate-attr="title-tag:page-title">Vision Web Design Studio - Home</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <meta name="description" data-translate="index-meta-description" content="Vision Web Design Studio crafts dynamic, secure, and lightning-fast websites in HTML, CSS, and JavaScript. Specializing in responsive, custom design for long-term growth.">
-    <meta name="keywords" data-translate="index-meta-keywords" content="web design, web development, custom websites, responsive design, HTML, CSS, JavaScript, Vision Web Design, web studio, front-end development">
+    
+    <meta name="description" content="Vision Web Design Studio crafts dynamic, secure, and lightning-fast websites in HTML, CSS, and JavaScript. Specializing in responsive, custom design for long-term growth." data-translate-attr="content:index-meta-description">
+    <meta name="keywords" content="web design, web development, custom websites, responsive design, HTML, CSS, JavaScript, Vision Web Design, web studio, front-end development" data-translate-attr="content:index-meta-keywords">
     <meta name="robots" content="index, follow">
       
+    <link rel="apple-touch-icon" href="images/favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
     <link rel="canonical" href="https://www.visionwebdesign.studio/">
     
-    <meta property="og:title" data-translate="index-og-title" content="Vision Web Design Studio | Forging Digital Success">
-    <meta property="og:description" data-translate="index-og-description" content="Vision Web Design Studio crafts dynamic, secure, and lightning-fast custom websites. Let's bring your vision to life.">
+    <meta property="og:title" content="Vision Web Design Studio | Forging Digital Success" data-translate-attr="content:index-og-title">
+    <meta property="og:description" content="Vision Web Design Studio crafts dynamic, secure, and lightning-fast custom websites. Let's bring your vision to life." data-translate-attr="content:index-og-description">
     <meta property="og:url" content="https://www.visionwebdesign.studio"> 
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.visionwebdesign.studio/images/seamless.jpg"> 
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="1068">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Vision Web Design Studio",
-      "image": "https://www.visionwebdesign.studio/images/index-logo.jpg", 
-      "@id": "https://www.visionwebdesign.studio/#organization",
-      "url": "https://www.visionwebdesign.studio",
-      "priceRange": "$$",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61585122449353"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Calle San Francisco 40",
-        "addressLocality": "Los Gallardos",
-        "addressRegion": "Almeria",
-        "postalCode": "04280",
-        "addressCountry": "ES"
-      },
-      "telephone": "+34 634 318 014", 
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      "areaServed": "Worldwide" 
-    }
-    </script>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vision Web Design Studio | Forging Digital Success" data-translate-attr="content:index-og-title">
+    <meta name="twitter:description" content="Vision Web Design Studio crafts dynamic, secure, and lightning-fast custom websites. Let's bring your vision to life." data-translate-attr="content:index-og-description">
+    <meta name="twitter:image" content="https://www.visionwebdesign.studio/images/seamless.jpg">
+    <script type="application/ld+json" id="schema-site" data-translate-schema="meta-title:index-og-description">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Vision Web Design Studio",
+  "image": "https://www.visionwebdesign.studio/images/index-logo.jpg", 
+  "@id": "https://www.visionwebdesign.studio/#organization",
+  "url": "https://www.visionwebdesign.studio",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61585122449353"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle San Francisco 40",
+    "addressLocality": "Los Gallardos",
+    "addressRegion": "Almeria",
+    "postalCode": "04280",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34 634 318 014", 
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "areaServed": "Worldwide" 
+}
+</script>
     <style>
         /* GLOBAL STYLES */
         body {
@@ -68,6 +76,7 @@
             flex-direction: column;
             padding: 0 40px;
             overflow-x: hidden; /* Prevents horizontal scroll from breakout */
+
         }
 
       header {
@@ -281,6 +290,7 @@
         bottom: 20px; /* Sits 20px above the bottom of the screen */
         top: auto;
         transform: none;
+        bottom: 0px;
         
         position: fixed;
         display: flex;
@@ -290,6 +300,7 @@
         background-color: transparent; 
         z-index: 3000;
         pointer-events: none;
+       
         
         /* Forces it to ignore the body's 20px padding */
         margin-left: 12px !important; 
@@ -325,7 +336,7 @@
             color: #ccc;
             padding: 20px 0;
             text-align: center;
-            margin: 0 -40px;
+          margin: 0 -40px 40px;
         }
 
         .footer-links a { color: #20B2AA; text-decoration: none; font-weight: bold; margin: 0 10px; }
@@ -418,6 +429,7 @@
                 <li><a href="index.html" class="active" data-translate="nav-home">Home</a></li>
                 <li><a href="about.html" data-translate="nav-about">About</a></li>
                 <li><a href="portfolio.html" data-translate="nav-portfolio">Portfolio</a></li>
+                 <li><a href="demonstrations.html" data-translate="nav-demonstrations">Live Demos</a></li>
                 <li><a href="contact.html" data-translate="nav-contact">Contact</a></li>
             </ul>
         </nav>

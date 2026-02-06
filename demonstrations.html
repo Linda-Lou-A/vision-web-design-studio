@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-attr="text:demo-meta-title">Vision Web Design Studio - Live Demos</title>
+    
+    <link rel="canonical" href="https://visionwebdesign.studio/demonstrations.html">
+
+    <meta name="description" content="Explore live website templates from Vision Web Design Studio, including restaurant and real estate solutions." data-translate-attr="content:demo-meta-desc">
+<link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta property="og:type" content="website">
+<meta property="og:url" content="https://visionwebdesign.studio/demonstrations.html">
+<meta property="og:title" content="Vision Web Design Studio - Live Demos" data-translate-attr="content:demo-meta-title">
+<meta property="og:description" content="Explore live website templates from Vision Web Design Studio." data-translate-attr="content:demo-meta-desc">
+<meta property="og:image" content="https://visionwebdesign.studio/images/restaurant-home.png">
+<meta name="robots" content="index, follow">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://visionwebdesign.studio/demonstrations.html">
+<meta property="twitter:title" content="Vision Web Design Studio - Live Demos" data-translate-attr="content:demo-meta-title">
+<meta property="twitter:description" content="Explore live website templates from Vision Web Design Studio." data-translate-attr="content:demo-meta-desc">
+<meta property="twitter:image" content="https://visionwebdesign.studio/images/restaurant-home.png">
+<script type="application/ld+json" id="schema-site" data-translate-schema="demo-meta-title:demo-meta-desc">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Vision Web Design Studio - Live Demos",
+  "description": "Explore live website templates from Vision Web Design Studio, including restaurant and real estate solutions.",
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Vision Web Design Studio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.visionwebdesign.studio/images/favicon.png"
+    }
+  }
+}
+</script>
+  <style>
+    /* --- CORE STYLING --- */
+    :root {
+        --accent-green: #20B2AA;
+        --dark-background: #000;
+        --light-text: #fff;
+        --dark-text: #000;
+        --grey-text: #ccc; 
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: var(--dark-background);
+        color: var(--light-text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-x: hidden;
+    position: relative;
+    }
+
+    /* --- HEADER & NAVIGATION --- */
+    header {
+        background-color: #fff;
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin: 0 -40px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
+        position: relative;
+        min-height: 50px;
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--accent-green);
+        text-decoration: none;
+        text-align: center;
+        line-height: 1.1;
+        margin-left: -20px; 
+        z-index: 2;
+    }
+
+    .nav-links { 
+        list-style: none; 
+        margin: 0; padding: 0; 
+        display: flex; 
+        position: absolute;
+        right: 40px;
+    }
+    .nav-links li { margin-left: 30px; }
+    .nav-links a { text-decoration: none; color: var(--accent-green); font-weight: bold; }
+    .nav-links a.active { color: var(--dark-text) !important; border-bottom: none !important; }
+
+    .menu-toggle { display: none; background: none; border: none; color: var(--accent-green); font-size: 30px; cursor: pointer; }
+
+    .lang-switcher { 
+        display: flex; 
+        align-items: center; 
+        gap: 10px; 
+        position: absolute;
+        left: 40px;
+    }
+    .lang-switcher img { width: 30px; height: 20px; cursor: pointer; object-fit: cover; border-radius: 3px; }
+.title h1 {
+    text-align: center;
+}
+.title {
+    text-align: center;
+    padding-bottom: 10px;
+}
+    /* --- TURQUOISE CONTAINER (BREAKOUT STYLE) --- */
+    .main-content {
+        flex-grow: 1;
+        width: 100%;
+        margin: 40px 0;
+    }
+
+    /* --- 1. The wrapper must be completely empty/transparent --- */
+.main-content, .demo-container-bg {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* --- 2. The cards need the color and the margin --- */
+.demo-content-wrapper {
+    background-color: var(--accent-green) !important;
+    margin-bottom: 50px; /* This FORCES the black gap manually */
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+    .demo-image {
+        flex: 0 0 45%; 
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        height: 300px; /* Increased height for desktop impact */
+    }
+
+    .demo-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    .demo-details {
+        flex: 1;
+        text-align: left;
+    }
+
+    .demo-details h3 { margin-top: 0; color:#ffffff; font-size: 1.8rem; }
+    
+    .demo-description { font-size: 1rem; line-height: 1.6; color: #333; margin-bottom: 20px; }
+
+    .feature-list { text-align: left; padding-left: 20px; margin-bottom: 20px; }
+    .feature-list li { font-size: 0.95rem; margin-bottom: 10px; color: #ffffff; }
+
+    .tech-stack { display: flex; gap: 15px; font-size: 0.85rem; color: #666; font-weight: bold; }
+    .tech-stack i { color: var(--accent-green); }
+
+    /* --- OVERLAY & BUTTON --- */
+    .demo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 1. USE RGBA for the background instead of opacity: 0.5 */
+    /* This makes ONLY the black background see-through */
+    background: rgba(0, 0, 0, 0.3); 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* 2. Keep this as 0 so it stays hidden until hover */
+    opacity: 0; 
+    transition: 0.3s;
+}
+   .demo-image:hover .demo-overlay {
+    /* 3. This makes the whole layer appear, but the button inside will be solid */
+    opacity: 1; 
+}
+
+    .btn-view {
+    /* 4. Ensure the button has a solid background and border */
+    background-color: var(--accent-green); /* Solid turquoise */
+    color: white;
+    border: 2px solid white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    /* This ensures it stands out clearly */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+}
+    .btn-view:hover { background: white; color: var(--accent-green); }
+    .demo-content-wrapper:hover .demo-overlay {
+    opacity: 1;
+}
+
+/* --- STYLED TEXT LINK --- */
+.read-more-link {
+    display: inline-block;
+    color: #ffffff; /* Matches your white text theme */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.read-more-link:hover {
+    border-bottom: 2px solid #ffffff; /* Underline appears on hover */
+    padding-bottom: 2px;
+}
+
+    /* --- FOOTER --- */
+    footer { 
+        background-color: #111; 
+        color: var(--grey-text); 
+        padding: 30px 0; 
+        text-align: center; 
+        margin: 0 -40px; 
+        margin-top: auto;
+    }
+    .footer-links a { color: var(--accent-green); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    /* LANGUAGE SWITCHER BORDER */
+.lang-switcher img {
+    width: 30px;
+    cursor: pointer;
+    border: 2px solid transparent; /* Keeps things from jumping when border appears */
+    border-radius: 3px;
+    transition: border-color 0.3s ease;
+}
+
+.lang-switcher img.active-lang {
+    border-color: #20B2AA; /* Your Vision Green/Teal */
+}
+ /* --- Floating Social Bar (Desktop) --- */
+.social-share-container {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    z-index: 2000;
+}
+
+.social-share-container h3 { display: none; }
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* THE MISSING PIECE: Styling the actual circles */
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Adds a little depth */
+}
+
+/* THE HOVER RULE: Makes them grow slightly */
+.share-btn:hover {
+    transform: scale(1.15);
+}
+
+/* Colors */
+.facebook-btn { background-color: #3b5998; }
+.twitter-btn { background-color: #000; }
+.linkedin-btn { background-color: #0077b5; }
+.whatsapp-btn { background-color: #25D366; }
+
+    /* --- MOBILE STYLING --- */
+    @media screen and (max-width: 1023px) {
+        body { padding: 0 15px; }
+        header { margin: 0 -15px; }
+        .navbar { justify-content: space-between; padding: 0 15px; }
+        .logo { margin-left: 0; position: static; }
+        .lang-switcher { position: static; }
+        .menu-toggle { display: block; }
+        .nav-links { display: none; }
+
+        /* --- MOBILE MENU DROPDOWN FIXES --- */
+        .nav-menu-links.is-open {
+            display: flex; 
+            flex-direction: column;
+            position: absolute; 
+            top: 60px; 
+            right: 15px;
+            background-color: #222; 
+            padding: 15px; 
+            border-radius: 8px;
+            z-index: 100; 
+            min-width: 180px; 
+            text-align: center;
+        }
+
+        /* Fix Spacing: Remove desktop left margin and add vertical space */
+        .nav-menu-links.is-open li { 
+            margin: 12px 0 !important; 
+            margin-left: 0 !important; 
+            list-style: none;
+        }
+
+        /* Fix Active Link Color for Mobile (White) */
+        .nav-menu-links.is-open a.active { 
+            color: #ffffff !important; 
+            border-bottom: none !important; 
+        }
+
+        /* --- CARDS & GAPS --- */
+        /* 1. Make the big green box invisible so the black body shows through */
+        .demo-container-bg {
+            background-color: transparent !important;
+            padding: 0 !important;
+            width: 100%;
+            left: 0;
+            transform: none;
+        }
+
+        /* 2. Put the turquoise color back onto the individual cards */
+        .demo-content-wrapper {
+            background-color: var(--accent-green) !important;
+            margin-bottom: 30px; /* This creates the black gap between cards */
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .demo-image { width: 100%; height: 250px; flex: none; }
+
+        /* 3. Ensure all text inside remains white for readability */
+        .demo-details h3, 
+        .feature-list li, 
+        .read-more-link,
+        .tech-stack,
+        .tech-stack i {
+            color: #ffffff !important;
+        }
+        .demo-description {
+            color: #222
+        }
+
+        footer { margin: 0 -15px; width: calc(100% + 30px); }
+         .social-share-container {
+        /* Reset any previous settings */
+        left: 0;
+        width: 100%;
+        bottom: 20px; /* Sits 20px above the bottom of the screen */
+        top: auto;
+        transform: none;
+        
+        position: fixed;
+        display: flex;
+        justify-content: center; /* Horizontally centers the contents */
+        align-items: center;
+        
+        background-color: transparent; 
+        z-index: 3000;
+        pointer-events: none;
+        
+        /* Forces it to ignore the body's 20px padding */
+        
+    }
+
+    .share-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        pointer-events: auto;
+        
+        /* Safety centering */
+        margin: 0 auto;
+    }
+    
+    body {
+        padding-bottom: 20px; /* Space for the buttons */
+    }
+    }
+</style>
+</head>
+
+<body data-page-id="demonstrations">
+
+    <header>
+        <nav class="navbar">
+            <div class="lang-switcher">
+                <img src="images/english.png" alt="English" id="lang-en" class="active-lang" data-lang="en">
+                <img src="images/spanish.png" alt="Español" id="lang-es" data-lang="es">
+            </div>
+            <a href="index.html" class="logo">Vision Web<br> Design Studio</a>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            
+            <ul class="nav-links nav-menu-links"> 
+                <li><a href="index.html" data-translate="nav-home">Home</a></li>
+                <li><a href="about.html" data-translate="nav-about">About</a></li>
+                <li><a href="portfolio.html" data-translate="nav-portfolio">Portfolio</a></li>
+                <li><a href="demonstrations.html" class="active" data-translate="nav-demonstrations">Live Demos</a></li>
+                <li><a href="contact.html" data-translate="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="title">
+            <h1 data-translate="demo-hero-title">Vision Templates</h1>
+            <p data-translate="demo-hero-subtitle">Live demo examples of what Vision can do for your business.</p>
+        </div>
+
+        <div class="demo-card">
+            <div class="demo-content-wrapper">
+                <div class="demo-image">
+                    <img src="images/restaurant-home.png" alt="Restaurant Template">
+                    <div class="demo-overlay">
+                        <a href="demos/vista/index.html" class="btn-view" data-translate="btn-view-case">View Case Study</a>
+                    </div>
+                </div>
+                <div class="demo-details">
+                    <h3 data-translate="vista-title">Vista Restaurant Template</h3>
+                    <p class="demo-description" data-translate="vista-desc">
+                        A complete digital solution for modern dining. Featuring an <strong>automated booking system</strong> with email notifications and a customizable <strong>Events Manager</strong>.
+                    </p>
+                    <ul class="feature-list">
+                        <li data-translate="vista-feat-1">Automated Booking & Email</li>
+                        <li data-translate="vista-feat-2">Upcoming Events Page</li>
+                        <li data-translate="vista-feat-3">English & Spanish Language Support</li>
+                        <li data-translate="vista-feat-4">Digital Menu Integration</li>
+                    </ul>
+                    <a href="demos/vista/index.html" class="read-more-link" data-translate="btn-view-case-arrow">View Vista Demo &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <div class="demo-content-wrapper">
+                <div class="demo-image">
+                    <img src="https://media.istockphoto.com/id/1137516125/photo/coming-soon-key-shows-upcoming-real-estate-property-available-3d-illustration.webp?a=1&b=1&s=612x612&w=0&k=20&c=n9BJXhG75vQO8szrc85TP0y0hBAwkdkY7XRD433kyhI=" alt="Estate Agency Template Coming Soon">
+                    <div class="demo-overlay">
+                        <span class="btn-view" data-translate="coming-soon">Coming Soon</span>
+                    </div>
+                </div>
+                <div class="demo-details">
+                    <h3 data-translate="estate-title">Estate Agency Template</h3>
+                    <p class="demo-description" data-translate="estate-desc">
+                        A high-end real estate solution designed for lead conversion. This upcoming template includes a <strong>dynamic property search</strong> and a sleek <strong>image gallery for each property</strong>.
+                    </p>
+                    <ul class="feature-list">
+                        <li data-translate="estate-feat-1">Advanced Property Filtering</li>
+                        <li data-translate="estate-feat-2">Property Specs & Features</li>
+                        <li data-translate="estate-feat-3">WhatsApp Agent Integration</li>
+                        <li data-translate="estate-feat-4">High-Res Image Galleries</li>
+                        <li data-translate="estate-feat-5">Print & More Info Options</li>
+                    </ul>
+                    <span class="read-more-link" style="opacity: 0.6; cursor: default;" data-translate="coming-soon-arrow">Coming Soon &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-social-wrapper">
+        <div class="social-share-container">
+            <h3 data-translate="social-share-h3">Share Our Services:</h3>
+            <div class="share-buttons">
+                <a href="#" 
+                   onclick="var lang = document.documentElement.lang || 'en'; var msg = window.translations[lang]['whatsapp-msg']; window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg + window.location.href)); return false;" 
+                   class="share-btn whatsapp-btn" 
+                   data-translate-attr="aria-label:share-whatsapp"
+                   aria-label="Share on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" 
+                   onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;" 
+                   class="share-btn facebook-btn" 
+                   data-translate-attr="aria-label:share-facebook"
+                   aria-label="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" 
+                   onclick="var lang = document.documentElement.lang || 'en'; var msg = window.translations[lang]['share-msg']; window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(msg), 'twitter-share-dialog', 'width=626,height=436'); return false;" 
+                   class="share-btn twitter-btn" 
+                   data-translate-attr="aria-label:share-twitter"
+                   aria-label="Share on X">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" 
+                   onclick="var lang = document.documentElement.lang || 'en'; var title = window.translations[lang]['share-linkedin-title']; window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href) + '&title=' + encodeURIComponent(title), 'linkedin-share-dialog', 'width=626,height=436'); return false;" 
+                   class="share-btn linkedin-btn" 
+                   data-translate-attr="aria-label:share-linkedin"
+                   aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy.html" data-translate="nav-privacy">Privacy Policy</a> | 
+                <a href="terms.html" data-translate="nav-terms">Terms of Use</a>
+            </div>
+            <p class="copyright">&copy; 2025 Vision Web Design Studio.</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="translator.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

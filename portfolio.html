@@ -5,22 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title data-translate="portfolio-title">Vision Web Design Studio - Portfolio</title>
+   <title data-translate-attr="title-tag:portfolio-title">Vision Web Design Studio - Portfolio</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <meta name="description" data-translate="portfolio-meta-description" content="A showcase of custom web design projects by Vision Web Design Studio, including e-commerce platforms and comprehensive B2B portals.">
-    <meta name="keywords" data-translate="portfolio-meta-keywords" content="web design portfolio, custom website showcase, e-commerce development, B2B web portals, responsive design examples, front-end projects">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <meta name="description" content="A showcase of custom web design projects by Vision Web Design Studio, including e-commerce platforms and comprehensive B2B portals." data-translate-attr="content:portfolio-meta-description">
+    <meta name="keywords" content="web design portfolio, custom website showcase, e-commerce development, B2B web portals, responsive design examples, front-end projects" data-translate-attr="content:portfolio-meta-keywords">
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="https://www.visionwebdesign.studio/portfolio.html">
 
-    <meta property="og:title" data-translate="portfolio-og-title" content="Vision Web Design Studio - Portfolio | Project Showcase">
-    <meta property="og:description" data-translate="portfolio-og-description" content="A showcase of custom web design projects by Vision Web Design Studio, including e-commerce platforms and comprehensive B2B portals.">
+    <meta property="og:title" content="Vision Web Design Studio - Portfolio | Project Showcase" data-translate-attr="content:portfolio-og-title">
+    <meta property="og:description" content="A showcase of custom web design projects by Vision Web Design Studio, including e-commerce platforms and comprehensive B2B portals." data-translate-attr="content:portfolio-og-description">
     <meta property="og:image" content="https://www.visionwebdesign.studio/images/index.png"> 
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.visionwebdesign.studio/portfolio.html">
 
-   <script type="application/ld+json">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vision Web Design Studio - Portfolio | Project Showcase" data-translate-attr="content:portfolio-og-title">
+    <meta name="twitter:description" content="A showcase of custom web design projects by Vision Web Design Studio, including e-commerce platforms and comprehensive B2B portals." data-translate-attr="content:portfolio-og-description">
+    <meta name="twitter:image" content="https://www.visionwebdesign.studio/images/index.png">
+
+   <script type="application/ld+json" id="schema-site" data-translate-schema="portfolio-og-title:portfolio-og-description">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -59,6 +67,8 @@
             flex-direction: column;
             padding: 0 40px; 
             box-sizing: border-box;
+            overflow-x: hidden;
+    position: relative;
         }
 
        header {
@@ -120,75 +130,77 @@
         }
 
         
-        /* --- TURQUOISE BACKGROUND CONTAINER --- */
-        .portfolio-container {
-            background-color: var(--accent-green); 
-            color: var(--dark-text); 
-            padding: 40px; 
-            border-radius: 8px;
-            margin: 0; 
-            width: 100%; 
-            box-sizing: border-box; 
-            text-align: left; 
-        }
-        
-        /* --- Portfolio Page Specific Styling --- */
+       /* --- PORTFOLIO CONTAINER (Updated to be a transparent wrapper) --- */
+    .portfolio-container {
+        background-color: transparent !important; /* Forces the black body to show */
+        padding: 0; 
+        width: 100%; 
+        box-sizing: border-box; 
+        text-align: left; 
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* --- PORTFOLIO HEADER --- */
+    .portfolio-header {
+        background-color: var(--dark-background); 
+        padding: 20px 40px; 
+        /* Adjusted margin to sit cleanly at the top of the stack */
+        margin: 0 0 40px 0; 
+        border-radius: 8px;
+    }
+    
+    .portfolio-header h1 {
+        color: var(--light-text); 
+        font-size: 2.8em;
+        margin: 0;
+        text-align: center;
+    }
 
-        .portfolio-header {
-            background-color: var(--dark-background); 
-            padding: 20px 40px; 
-            margin: -40px -40px 50px -40px; 
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-        }
-        
-        .portfolio-header h1 {
-            color: var(--light-text); 
-            font-size: 2.8em;
-            padding-bottom: 0;
-            margin-bottom: 0;
-            margin-top: 0;
-            text-align: center;
-        }
+    /* --- THE INDIVIDUAL FLOATING CARDS --- */
+    .project-item {
+        display: block; 
+        background-color: var(--accent-green); /* Each project now has the green background */
+        padding: 40px;
+        margin-bottom: 50px; /* THIS CREATES THE BLACK GAP */
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds depth on the black background */
+        border-bottom: none; /* Remove the old line separator */
+    }
 
-        .project-item {
-            display: block; 
-            padding: 40px 0;
-            border-bottom: 1px solid #000; 
-        }
-
-        .project-item:last-child {
-            border-bottom: none;
-        }
-
+    .project-item:last-child {
+        margin-bottom: 0;
+    }
         .project-details {
             width: 100%;
             margin-bottom: 20px; 
         }
 
-        .project-details h2 {
-            font-size: 2em;
-            color: var(--dark-text); 
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        
-        .project-details a {
-            color: var(--dark-text); 
-            text-decoration: underline; 
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+       /* --- Ensuring all text inside the green card is readable --- */
+    .project-details h2 {
+        font-size: 2.2em;
+        color: #ffffff !important; /* Changed to white for better contrast */
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    
+    .project-details a {
+        color: #ffffff !important; /* Changed to white */
+        text-decoration: underline; 
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
 
-        .project-details a:hover {
-            color: #333;
-        }
-        
-        .project-details p {
-            line-height: 1.7;
-            color: var(--dark-text); 
-        }
+    .project-details a:hover {
+        color: var(--dark-text) !important;
+    }
+    
+    .project-details p, 
+    .project-details strong {
+        line-height: 1.7;
+        color: #000 !important; /* Forced to white for the new green card look */
+    }
         
         /* --- Horizontal Image Gallery (Desktop) --- */
         .project-gallery {
@@ -310,175 +322,129 @@
         }
         
         /* --- Mobile Breakpoint (<= 1300px) --- */
-        @media screen and (max-width: 1300px) {
-            
-            /* Global Padding/Margin Adjustments */
-            body {
-                padding: 0 15px; 
-            }
-          header {
-    background-color: var(--light-text);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-left: -15px;
-    margin-right: -15px;
-    padding: 15px 15px;
-    width: 100vw;
-    box-sizing: border-box;
-}
-           .main-content {
-    flex-grow: 1;
-    width: 100%;
-    margin: 20px auto; 
-    padding: 0;
-    /* This ensures it stays centered and matches your other pages */
-    max-width: 1200px; 
-    text-align: center; 
-    box-sizing: border-box;
-}
-           .portfolio-container {
-    background-color: var(--accent-green); 
-    color: var(--dark-text); 
-    padding: 40px; 
-    border-radius: 8px;
-    margin: 0 auto; /* Added auto to keep it centered */
-    width: 100%; 
-    box-sizing: border-box; 
-    text-align: left; 
-}
-            
-            /* Mobile header adjustments */
-            .portfolio-header {
-                padding: 15px 20px;
-                margin: -20px -20px 30px -20px;
-            }
-
-            /* Mobile Layout: Stack items vertically */
-            .project-gallery {
-                flex-direction: column; 
-                gap: 15px;
-                align-items: center; 
-                justify-content: center;
-            }
-            
-            .project-details h2, .project-details p {
-                text-align: center;
-            }
-            
-            .project-details a {
-                display: block;
-                text-align: center;
-            }
-
-            /* --- Aspect Ratio Wrapper for Uniform Sizing --- */
-            .project-gallery .image-wrapper { 
-                flex: none; 
-                position: relative;
-                width: 90%;
-                height: 0;
-                padding-bottom: 56.25%; 
-                margin: 0 auto 15px auto; 
-            }
-            
-            /* Mobile Image Styling: Fills the 16:9 Wrapper */
-            .project-gallery img, .project-gallery .placeholder {
-                position: absolute; 
-                top: 0;
-                left: 0;
-                width: 100%; 
-                height: 100%; 
-                object-fit: cover; 
-                background-color: #20B2AA; 
-                border: none; 
-                border-radius: 4px;
-                max-height: none; 
-                aspect-ratio: auto;
-                max-width: none;
-            }
-            /* --- END NEW MOBILE SIZING --- */
-
-
-            /* --- Hamburger Menu Logic --- */
-            .navbar {
-                /* On mobile, we align the logo and menu toggle, hiding the separate flag switcher */
-                display: grid;
-                grid-template-areas: "flags logo toggle"
-                                    "links links links"; /* Links will occupy full width if open */
-                grid-template-columns: auto 1fr auto;
-                justify-content: space-between;
-                align-items: center;
-                gap: 0 15px;
-            }
-        
-            .logo {
-                grid-area: logo;
-                /* Set max-width to 100% of the allocated grid column for now */
-                max-width: 100%; 
-                text-align: center;
-                margin: 0; /* Override desktop margin */
-                /* For screens < 1300px, reset the nowrap property to allow wrapping if the width is too small */
-                white-space: normal; 
-                line-height: 1.2;
-            padding-left: 24px; 
-            text-align: center; 
-            }
-            
-            .lang-switcher {
-                grid-area: flags; /* Position flags on the left */
-                position: static; /* Remove absolute positioning from previous attempt */
-                margin: 0;
-                padding: 0;
-            }
-
-            
-.nav-menu-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 15px; 
-    background-color: #222;
-    width: auto;           /* Let the box size itself based on padding */
-    min-width: 80px;      /* Ensures it doesn't get too skinny */
+       /* --- Mobile Breakpoint (<= 1023px) --- */
+@media screen and (max-width: 1023px) {
     
-    /* This creates the '5cm' style padding you wanted around the whole list */
-    padding: 15px 40px;         
-    
-    border-radius: 8px;
-    z-index: 99;
-    text-align: center;    /* This centers the text container */
-}
+    body {
+        padding: 0 15px !important; /* Forces 0 padding at the bottom */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
 
-.nav-menu-links li {
-    margin: 0;
-    width: 100%;           /* Ensures the list item takes up full width for centering */
-}
+    header {
+        background-color: var(--light-text);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin: 0 -15px; 
+        padding: 15px 15px;
+        width: 100vw; 
+        box-sizing: border-box;
+    }
 
-.nav-menu-links a {
-    padding: 8px 0;          /* Reduced from 15px to 8px to bring items closer */
-    display: block;
-    color: #20B2AA;         /* This sets the text to your Turquoise/Green color */
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.1em;       /* Slightly adjusted for a cleaner look */
-    font-weight: bold;      /* Makes the green pop more against the dark background */
-}
+    /* --- RESTORED NAVIGATION LOGIC --- */
+    .navbar {
+        display: grid;
+        grid-template-areas: "flags logo toggle"
+                             "links links links";
+        grid-template-columns: auto 1fr auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0 15px;
+    }
 
-            .menu-toggle {
-                grid-area: toggle;
-                display: block; 
-            }
-            
-            .nav-links.is-open {
-                display: flex;
-            }
-            /* --- NEW: Active Link Styling --- */
-            .nav-links a.active {
-                color: #fff; /* Text color is WHITE inside the dark mobile menu */
-            } 
-            footer {
-                margin: 0 -15px;
-            }
-        }
+    .logo {
+        grid-area: logo;
+        max-width: 100%; 
+        text-align: center;
+        margin: 0; 
+        white-space: normal; 
+        line-height: 1.2;
+        padding-left: 24px; 
+    }
+
+    .lang-switcher {
+        grid-area: flags;
+        position: static;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 15px; 
+        background-color: #222;
+        width: auto;
+        min-width: 80px;
+        padding: 15px 40px;
+        border-radius: 8px;
+        z-index: 99;
+        text-align: center;
+    }
+
+    .nav-menu-links li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-menu-links a {
+        padding: 8px 0;
+        display: block;
+        color: #20B2AA; 
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    .menu-toggle {
+        grid-area: toggle;
+        display: block; 
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .nav-links a.active {
+        color: #fff; /* Active link white in mobile menu */
+    }
+
+    /* --- THE CONTENT & FOOTER FIX --- */
+    .main-content {
+        flex: 1 0 auto; /* Pushes footer down */
+        width: 100%;
+        margin: 0 auto; 
+        /* ADDED SPACE FOR SOCIAL BUTTONS HERE instead of on the body */
+        padding: 20px 0 120px 0; 
+        box-sizing: border-box;
+    }
+
+    .portfolio-container {
+        background-color: transparent !important; 
+        padding: 0; 
+        margin: 0;
+        width: 100%; 
+    }
+
+    .portfolio-header {
+        padding: 15px 20px;
+        margin: 0 0 30px 0;
+        text-align: center;
+    }
+
+    footer {
+        margin: 0 -15px;
+        width: 100vw;
+        background-color: #111;
+        padding: 20px 0;
+        flex-shrink: 0;
+        margin-bottom: -80px;
+    }
+}
 
         /* FIX 2: Tighter Mobile Breakpoint (<= 767px) for forcing logo text wrap */
 @media screen and (max-width: 767px) {
@@ -672,8 +638,8 @@
     }
     
     body {
-        padding-bottom: 100px; /* Space for the buttons */
-    }
+        padding-bottom: 0px !important;
+}
 }
     </style>
 </head>
@@ -699,6 +665,7 @@
                 <li><a href="index.html" data-translate="nav-home">Home</a></li>
                 <li><a href="about.html" data-translate="nav-about">About</a></li>
                 <li><a href="portfolio.html" class="active" data-translate="nav-portfolio">Portfolio</a></li>
+                 <li><a href="demonstrations.html" data-translate="nav-demonstrations">Live Demos</a></li>
                 <li><a href="contact.html" data-translate="nav-contact">Contact</a></li>
             </ul>
         </nav>

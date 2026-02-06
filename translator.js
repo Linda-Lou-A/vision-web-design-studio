@@ -83,42 +83,72 @@ function applyTranslation(lang) {
     });
 
     // -------------------------------------------------------------------
-    // ✨ NEW STEP 5: Update SEO/Meta Tags (Title, Description) for ALL Pages
+   // -------------------------------------------------------------------
+    // -------------------------------------------------------------------
+    // -------------------------------------------------------------------
+    // ✨ NEW STEP 5: Universal Attribute, Meta Tag & Schema Translator
     // -------------------------------------------------------------------
     
-    // Determine the page-specific meta keys. Defaults to 'meta-title' for the home page.
-    let pageMetaTitleKey = 'meta-title'; // Default key for home page
-    let pageMetaDescKey = 'meta-description'; // Default key for home page
-    
-    // Check if a specific page key is available in the HTML (using a hidden element or similar)
-    // A more reliable way is to check the URL or a specific hidden attribute on the body.
-    // For simplicity, we'll check for a key in the language map that corresponds to a page.
-    // NOTE: This assumes each page has a unique identifier in the HTML or URL.
-    
-    if (document.body.hasAttribute('data-page-id')) {
-        const pageId = document.body.getAttribute('data-page-id'); // e.g., 'about', 'contact'
-        pageMetaTitleKey = `${pageId}-meta-title`; // e.g., 'about-meta-title'
-        pageMetaDescKey = `${pageId}-meta-description`; // e.g., 'about-meta-description'
-    }
+    // 5a. Handle attributes like content, placeholder, and titles
+    document.querySelectorAll('[data-translate-attr]').forEach(element => {
+        const attrInstruction = element.getAttribute('data-translate-attr');
+        
+        // This splits "content:key-name" into attribute (content) and key (key-name)
+        const [attributeName, translationKey] = attrInstruction.split(':');
+        const translatedValue = translateText(translationKey);
 
-    // Update the <title> tag using the determined key
-    document.title = translateText(pageMetaTitleKey); 
-    
-    // Update the <meta name="description"> tag
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-        metaDescription.setAttribute('content', translateText(pageMetaDescKey));
+        if (translatedValue && translatedValue !== translationKey) {
+            // Special case for the browser tab title
+            if (element.tagName.toLowerCase() === 'title' || attributeName === 'title-tag') {
+                document.title = translatedValue;
+            } else {
+                // Standard case for meta 'content' or other attributes
+                element.setAttribute(attributeName, translatedValue);
+            }
+        }
+    });
+// 5b. Handle Schema JSON-LD Translation (Truly Universal Version)
+    const schemaTag = document.getElementById('schema-site');
+    if (schemaTag && schemaTag.getAttribute('data-translate-schema')) {
+        try {
+            const [nameKey, descKey] = schemaTag.getAttribute('data-translate-schema').split(':');
+            const schemaData = JSON.parse(schemaTag.textContent);
+            
+            // Function to update fields whether they are top-level or in mainEntity
+            const updateField = (obj) => {
+                if (obj.name) obj.name = translateText(nameKey);
+                
+                if (obj.description) {
+                    obj.description = translateText(descKey);
+                } else if (obj.areaServed) {
+                    obj.areaServed = translateText(descKey);
+                } else if (obj.jobTitle) {
+                    obj.jobTitle = translateText(descKey);
+                }
+                
+                // Special check for ContactPage nested ContactPoints
+                if (obj.contactPoint && Array.isArray(obj.contactPoint)) {
+                    obj.contactPoint.forEach(cp => {
+                        if (cp.areaServed) cp.areaServed = translateText(descKey);
+                    });
+                }
+            };
+
+            // Run update on top level
+            updateField(schemaData);
+            
+            // Run update on mainEntity if it exists (for Contact Page)
+            if (schemaData.mainEntity) {
+                updateField(schemaData.mainEntity);
+            }
+            
+            schemaTag.textContent = JSON.stringify(schemaData, null, 2);
+        } catch (e) {
+            console.error("Schema translation error:", e);
+        }
     }
-    
-    // Update the Open Graph title (<meta property="og:title">)
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-        // Use the same title key for og:title
-        ogTitle.setAttribute('content', translateText(pageMetaTitleKey)); 
-    }
-    
     // -------------------------------------------------------------------
-
+    // -------------------------------------------------------------------
     // 6. Update flag highlight
     document.querySelectorAll('.lang-switcher img').forEach(img => {
         img.classList.remove('active-lang');
