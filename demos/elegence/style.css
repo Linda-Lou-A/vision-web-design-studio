@@ -1,0 +1,253 @@
+/* --- Global Styles --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: #1a1a1a; }
+
+/* --- Navigation & Menu --- */
+header {
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { font-size: 1.5rem; letter-spacing: 2px; font-weight: 700; }
+.logo span { display: block; font-size: 0.7rem; font-family: 'Poppins'; font-weight: 300; color: #888; margin-top: -5px; }
+
+.nav-links { list-style: none; display: flex; align-items: center; }
+.nav-links li { margin-left: 20px; position: relative; }
+.nav-links a { text-decoration: none; color: #333; font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; transition: 0.3s; }
+.nav-links a:hover { color: #c5a47e; } /* Elegant Gold/Champagne Hover */
+
+/* --- Services Dropdown --- */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+}
+
+.dropdown-content li { margin: 0; width: 100%; }
+.dropdown-content a { padding: 10px 20px; display: block; font-weight: 400; }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* --- Split Hero Section --- */
+.hero-split {
+    display: flex;
+    height: 85vh; /* Almost full screen height */
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-panel {
+    flex: 1; /* Each takes half the screen */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: flex 0.7s ease-in-out; /* Smooth expansion */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-panel:hover { flex: 1.2; } /* Grows when hovered */
+
+/* You'll need to add your images here */
+.hair { background-image: url('images/hair-hero.jpg'); }
+.beauty { background-image: url('images/beauty-hero.jpg'); }
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.35); /* Darkens images so text pops */
+    z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 2; padding: 20px; }
+.hero-content h2 { font-size: 3rem; color: #fff; margin-bottom: 15px; }
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+.btn:hover { background: #fff; color: #333; }
+
+/* --- Booking CTA Section --- */
+.booking-cta {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #faf9f6; /* Off-white/Creamy background */
+}
+
+.booking-cta h2 { margin-bottom: 20px; font-size: 2.5rem; }
+.booking-cta p { max-width: 700px; margin: 0 auto 30px; color: #666; }
+
+.btn-dark {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background: #25D366; /* WhatsApp Green */
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
+}
+.page-content {
+    padding: 100px 20px;
+    min-height: 70vh; /* Keeps the footer at the bottom even if the page is empty */
+    text-align: center;
+}
+
+.intro-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+/* Update these in your style.css */
+
+/* Update these in your style.css */
+
+.hair { 
+    background-image: url('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2000&auto=format&fit=crop'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.beauty { 
+    /* Direct link to a luxury facial/spa photo */
+    background-image: url('https://plus.unsplash.com/premium_photo-1661598108033-594884357b95?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    background-size: cover;
+    background-position: center;
+}
+
+/* This makes the image zoom slightly on hover for a "premium" feel */
+.hero-panel:hover {
+    flex: 1.2;
+    cursor: pointer;
+}
+
+/* Ensure the overlay is dark enough for the white text to be readable */
+.overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% darkness */
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+
+.hero-panel:hover .overlay {
+    background: rgba(0, 0, 0, 0.2); /* Lightens slightly when you hover */
+}
+/* --- Team Page Styles --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.team-card {
+    background: #fff;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px); /* Gentle lift on hover */
+}
+
+.member-image {
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    filter: grayscale(20%); /* Softens the images for a unified look */
+    transition: 0.5s;
+}
+
+.team-card:hover .member-image {
+    filter: grayscale(0%);
+}
+
+/* Specialist Field Labels */
+.specialty {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c5a47e; /* That gold/beige hue we love */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.member-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.member-info p {
+    font-size: 0.9rem;
+    color: #777;
+    padding: 0 10px;
+}
+
+/* --- Temporary Unsplash Team Images --- */
+.hair-specialist-1 { background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1200&auto=format&fit=crop '); }
+.beauty-specialist-1 { background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop'); }
+.hair-specialist-2 { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop'); }
+.beauty-specialist-2 { background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop'); }
